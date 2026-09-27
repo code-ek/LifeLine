@@ -203,11 +203,13 @@ object FirstAidGuide : EmergencyAssistant {
 
     val suggestions = listOf(
         "Someone is unconscious",
+        "How to purify water",
         "Severe bleeding",
-        "There is a fire nearby",
+        "How to signal for rescue",
+        "Build an emergency shelter",
         "Someone is choking",
-        "Burn injury",
-        "Earthquake"
+        "How to start a fire safely",
+        "Earthquake safety"
     )
 
     override suspend fun reply(question: String): AssistantReply = answer(question)

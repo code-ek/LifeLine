@@ -61,14 +61,19 @@ class Listener(private val context: Context) {
         onError: (String) -> Unit
     ) {
         cancel()
-        val created = when {
-            onDeviceAvailable() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
-                SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
-            SpeechRecognizer.isRecognitionAvailable(context) -> SpeechRecognizer.createSpeechRecognizer(context)
-            else -> {
-                onError("Speech input isn't available on this phone. Type instead.")
-                return
+        val created = try {
+            when {
+                onDeviceAvailable() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
+                    SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
+                SpeechRecognizer.isRecognitionAvailable(context) -> SpeechRecognizer.createSpeechRecognizer(context)
+                else -> {
+                    onError("Speech input isn't available on this phone. Type instead.")
+                    return
+                }
             }
+        } catch (e: Exception) {
+            onError("Speech recognition isn't available on this phone. Type instead.")
+            return
         }
         recognizer = created
         created.setRecognitionListener(object : RecognitionListener {
@@ -99,7 +104,12 @@ class Listener(private val context: Context) {
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE, language.tag)
             .putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
             .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
-        created.startListening(intent)
+        try {
+            created.startListening(intent)
+        } catch (e: Exception) {
+            onError("Couldn't start speech recognition. Type instead.")
+            cancel()
+        }
     }
 
     /** Stops listening and delivers what was heard so far. */

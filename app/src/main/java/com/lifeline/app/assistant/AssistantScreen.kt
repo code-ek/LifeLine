@@ -84,7 +84,7 @@ fun AssistantScreen() {
     Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.ime)) {
         ScreenHeader(
             title = "Assistant",
-            subtitle = if (activeModel != null) "Offline AI on this phone · no internet needed"
+            subtitle = if (activeModel != null) "Offline AI on this phone · ask anything"
             else "Works offline · first-aid and disaster guidance"
         ) {
             AssistChip(
@@ -146,7 +146,7 @@ fun AssistantScreen() {
             OutlinedTextField(
                 value = input,
                 onValueChange = { input = it },
-                placeholder = { Text("Describe the emergency…") },
+                placeholder = { Text("Ask me anything…") },
                 modifier = Modifier.weight(1f),
                 maxLines = 3,
                 shape = RoundedCornerShape(24.dp),
