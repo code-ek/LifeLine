@@ -18,6 +18,7 @@ object Speaker {
     private const val TAG = "Speaker"
     private var tts: TextToSpeech? = null
     @Volatile private var ready = false
+    private val prompted = mutableSetOf<String>()
 
     fun init(context: Context) {
         if (tts != null) return
@@ -27,7 +28,6 @@ object Speaker {
         }
     }
 
-    /** Returns false if no voice exists for [language], so the UI can say so. */
     fun speak(language: Language, text: String): Boolean {
         val engine = tts ?: return false
         if (!ready || text.isBlank()) return false
@@ -36,6 +36,19 @@ object Speaker {
         if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) return false
         engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "translate-${text.hashCode()}")
         return true
+    }
+
+    /** Opens the system TTS voice installer so the user can download the missing voice. Only prompts once per language per session. */
+    fun installVoiceIfNeeded(context: Context, language: Language) {
+        if (!prompted.add(language.tag)) return
+        try {
+            context.startActivity(
+                Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+        } catch (_: Exception) {
+            Log.w(TAG, "No TTS data installer on this phone")
+        }
     }
 
     fun stop() {

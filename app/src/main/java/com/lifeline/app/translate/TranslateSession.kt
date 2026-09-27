@@ -120,7 +120,8 @@ object TranslateSession {
                 val result = TranslatorPrompt.clean(out.toString())
                 update(id) { it.copy(translated = result, done = true, error = if (result.isBlank()) "No translation came back. Try again." else null) }
                 if (result.isNotBlank() && _autoSpeak.value && !Speaker.speak(to, result)) {
-                    update(id) { it.copy(error = "No offline voice for ${to.name} on this phone; show the text instead.") }
+                    Speaker.installVoiceIfNeeded(app, to)
+                    update(id) { it.copy(error = "Installing ${to.name} voice — next translation will read aloud.") }
                 }
             } catch (t: Throwable) {
                 if (t is kotlinx.coroutines.CancellationException) throw t
