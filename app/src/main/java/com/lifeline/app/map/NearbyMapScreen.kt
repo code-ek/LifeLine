@@ -64,7 +64,6 @@ import java.util.Locale
 import kotlin.math.cos
 import kotlin.math.sin
 
-private val MeBlue = Color(0xFF0A84FF)
 
 /** A located SOS relative to this phone. */
 private data class Blip(val alert: SosAlert, val distanceM: Float, val bearingDeg: Float)
@@ -253,6 +252,8 @@ private fun Radar(blips: List<Blip>) {
     val ringColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.35f)
     val labelColor = MaterialTheme.colorScheme.onSurfaceVariant
     val background = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f)
+    val meColor = MaterialTheme.colorScheme.secondary
+    val meRingColor = MaterialTheme.colorScheme.onSecondary
     val measurer = rememberTextMeasurer()
     val range = niceRange(blips.maxOfOrNull { it.distanceM } ?: 0f)
 
@@ -292,9 +293,9 @@ private fun Radar(blips: List<Blip>) {
             )
         }
 
-        drawCircle(MeBlue.copy(alpha = 0.25f), 16.dp.toPx(), center)
-        drawCircle(Color.White, 8.dp.toPx(), center)
-        drawCircle(MeBlue, 6.dp.toPx(), center)
+        drawCircle(meColor.copy(alpha = 0.25f), 16.dp.toPx(), center)
+        drawCircle(meRingColor, 8.dp.toPx(), center)
+        drawCircle(meColor, 6.dp.toPx(), center)
     }
 }
 
@@ -304,7 +305,7 @@ private fun BlipRow(blip: Blip) {
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
         colors = CardDefaults.cardColors(containerColor = SosRed.copy(alpha = 0.10f))
     ) {
-        Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(12.dp).background(SosRed, CircleShape))
             Column(Modifier.padding(start = 12.dp).weight(1f)) {
                 Text(

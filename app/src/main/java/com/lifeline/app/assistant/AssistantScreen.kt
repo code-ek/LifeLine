@@ -28,6 +28,8 @@ import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
@@ -168,19 +170,20 @@ fun AssistantScreen() {
 
 @Composable
 private fun Intro(hasModel: Boolean, downloading: Boolean, onSetUp: () -> Unit) {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(16.dp))
-            .padding(14.dp),
-        verticalArrangement = Arrangement.spacedBy(6.dp)
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh)
     ) {
-        Text("Ask what to do in an emergency", fontWeight = FontWeight.SemiBold)
+        Column(
+            Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+        Text("Ask anything, from emergencies to general survival tips", fontWeight = FontWeight.SemiBold)
         Text(
             if (hasModel) "Answers come from an AI model running on this phone, checked against a built-in first-aid guide. " +
                 "It's general guidance, not a replacement for trained responders."
-            else "Answers come from a first-aid guide stored on this phone, so they work with no signal. " +
-                "It's general guidance, not a replacement for trained responders.",
+            else "Answers come from a built-in guide on this phone, so they work with no signal. " +
+                "Download the offline AI model to unlock any topic.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -190,6 +193,7 @@ private fun Intro(hasModel: Boolean, downloading: Boolean, onSetUp: () -> Unit) 
                 Text(if (downloading) "  Downloading offline AI…" else "  Get offline AI (one-time download)")
             }
         }
+    }
     }
 }
 
@@ -201,7 +205,7 @@ private fun QuestionBubble(text: String) {
             color = MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier
                 .widthIn(max = 300.dp)
-                .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(18.dp, 18.dp, 4.dp, 18.dp))
+                .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(16.dp, 16.dp, 4.dp, 16.dp))
                 .padding(horizontal = 14.dp, vertical = 10.dp)
         )
     }
@@ -212,8 +216,8 @@ private fun AnswerContainer(content: @Composable () -> Unit) {
     Column(
         Modifier
             .fillMaxWidth(0.92f)
-            .background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(18.dp, 18.dp, 18.dp, 4.dp))
-            .padding(14.dp),
+            .background(MaterialTheme.colorScheme.surfaceContainerHigh, RoundedCornerShape(16.dp, 16.dp, 16.dp, 4.dp))
+            .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(6.dp)
     ) { content() }
 }

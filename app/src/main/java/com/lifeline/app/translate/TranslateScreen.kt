@@ -336,17 +336,22 @@ private fun MicButton(language: Language, listening: Boolean, primary: Boolean, 
 
 @Composable
 private fun EmptyHint(mine: Language, theirs: Language) {
-    Column(
-        Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(16.dp)).padding(14.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh)
     ) {
-        Text("How it works", fontWeight = FontWeight.SemiBold)
-        Text(
-            "Tap your microphone and speak ${mine.name}; the phone translates into ${theirs.name} and reads it aloud. " +
-                "Hand them the phone and they tap theirs. Tap any translation to show it in big text.",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
+        Column(
+            Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Text("How it works", fontWeight = FontWeight.SemiBold)
+            Text(
+                "Tap your microphone and speak ${mine.name}; the phone translates into ${theirs.name} and reads it aloud. " +
+                    "Hand them the phone and they tap theirs. Tap any translation to show it in big text.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
 
@@ -377,7 +382,7 @@ private fun TranslationBubble(item: TranslationItem, onShow: () -> Unit, onRepla
                 .widthIn(max = 320.dp)
                 .background(
                     if (mine) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.tertiaryContainer,
-                    RoundedCornerShape(18.dp)
+                    RoundedCornerShape(16.dp)
                 )
                 .clickable(enabled = item.translated.isNotBlank(), onClick = onShow)
                 .padding(12.dp),

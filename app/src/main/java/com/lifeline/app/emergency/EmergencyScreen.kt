@@ -8,10 +8,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -87,16 +90,15 @@ fun EmergencyScreen() {
         }
     }
 
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        item {
-            ScreenHeader(title = "Emergency SOS", subtitle = "Alerts travel phone to phone, no internet needed") {
-                MeshStatus(peers)
-            }
+    Column(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.ime)) {
+        ScreenHeader(title = "Emergency SOS", subtitle = "Alerts travel phone to phone, no internet needed") {
+            MeshStatus(peers)
         }
 
+    LazyColumn(
+        modifier = Modifier.weight(1f).fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
         item {
             SosComposer(
                 selectedType = selectedType,
@@ -148,6 +150,7 @@ fun EmergencyScreen() {
 
         item { Spacer(Modifier.height(24.dp)) }
     }
+    }
 
     if (confirming) {
         AlertDialog(
@@ -179,7 +182,7 @@ fun EmergencyScreen() {
 
 @Composable
 private fun MeshStatus(peers: Int) {
-    val color = if (peers > 0) Color(0xFF34C759) else MaterialTheme.colorScheme.onSurfaceVariant
+    val color = if (peers > 0) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
     Text(
         text = if (peers == 1) "● 1 device nearby" else "● $peers devices nearby",
         color = color,
@@ -271,7 +274,7 @@ private fun SosAlertCard(alert: SosAlert, myLocation: Location?, now: Long, onCa
             else SosRed.copy(alpha = 0.12f)
         )
     ) {
-        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Surface(color = SosRed, shape = RoundedCornerShape(6.dp)) {
                     Text(
