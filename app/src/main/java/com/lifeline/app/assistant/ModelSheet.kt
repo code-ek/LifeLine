@@ -51,8 +51,7 @@ fun ModelSheet(onDismiss: () -> Unit) {
             item {
                 Text("Offline AI", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                 Text(
-                    "Download a model once, over Wi-Fi if you can. It then runs entirely on this phone: " +
-                        "no internet needed and nothing you ask leaves the device.",
+                    "Download once, runs on-device. No internet needed, nothing leaves the phone.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

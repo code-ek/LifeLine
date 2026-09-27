@@ -102,7 +102,7 @@ fun ChatHomeScreen(
             onClick = onOpenPrivate
         )
         if (peopleNearby == 0) {
-            InfoNote("No one nearby yet. Phones with LifeLine show up here when they are close — no internet needed.")
+            InfoNote("No one nearby yet. Phones with LifeLine show up when close, no internet needed.")
         }
     }
 }
@@ -139,9 +139,9 @@ private fun DoorCard(
 ) {
     val scheme = MaterialTheme.colorScheme
     val shape = RoundedCornerShape(16.dp)
-    val bg = if (filled) scheme.primary else scheme.surfaceContainerLowest
-    val fg = if (filled) scheme.onPrimary else scheme.onSurface
-    val sub = if (filled) scheme.onPrimary.copy(alpha = 0.9f) else scheme.onSurfaceVariant
+    val bg = if (filled) scheme.primaryContainer else scheme.surfaceContainerLowest
+    val fg = if (filled) scheme.onPrimaryContainer else scheme.onSurface
+    val sub = if (filled) scheme.onPrimaryContainer.copy(alpha = 0.8f) else scheme.onSurfaceVariant
 
     Column(
         modifier = Modifier
@@ -159,10 +159,10 @@ private fun DoorCard(
                 modifier = Modifier
                     .size(56.dp)
                     .clip(RoundedCornerShape(12.dp))
-                    .background(if (filled) Color.White.copy(alpha = 0.18f) else scheme.primaryContainer),
+                    .background(if (filled) scheme.primary.copy(alpha = 0.18f) else scheme.primaryContainer),
                 contentAlignment = Alignment.Center
             ) {
-                Icon(icon, contentDescription = null, tint = if (filled) scheme.onPrimary else scheme.onPrimaryContainer, modifier = Modifier.size(30.dp))
+                Icon(icon, contentDescription = null, tint = if (filled) scheme.primary else scheme.onPrimaryContainer, modifier = Modifier.size(30.dp))
             }
             Column(Modifier.weight(1f)) {
                 Text(title, style = MaterialTheme.typography.headlineSmall, color = fg)
@@ -173,14 +173,14 @@ private fun DoorCard(
                     modifier = Modifier
                         .heightIn(min = 30.dp)
                         .clip(RoundedCornerShape(15.dp))
-                        .background(if (filled) scheme.onPrimary else scheme.primary)
+                        .background(if (filled) scheme.primary else scheme.primary)
                         .padding(horizontal = 10.dp, vertical = 4.dp),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
                         if (unread > 99) "99+" else unread.toString(),
                         style = MaterialTheme.typography.labelLarge,
-                        color = if (filled) scheme.primary else scheme.onPrimary
+                        color = if (filled) scheme.onPrimary else scheme.onPrimary
                     )
                 }
             }
@@ -194,7 +194,7 @@ private fun DoorCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(10.dp))
-                .background(if (filled) Color.White.copy(alpha = 0.14f) else scheme.surfaceContainer)
+                .background(if (filled) scheme.primary.copy(alpha = 0.12f) else scheme.surfaceContainer)
                 .padding(horizontal = 12.dp, vertical = 10.dp)
         )
         Spacer(Modifier.size(0.dp))

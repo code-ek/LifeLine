@@ -178,19 +178,17 @@ private fun Intro(hasModel: Boolean, downloading: Boolean, onSetUp: () -> Unit) 
             Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
-        Text("Ask anything, from emergencies to general survival tips", fontWeight = FontWeight.SemiBold)
+        Text("Ask anything about emergencies or survival", fontWeight = FontWeight.SemiBold)
         Text(
-            if (hasModel) "Answers come from an AI model running on this phone, checked against a built-in first-aid guide. " +
-                "It's general guidance, not a replacement for trained responders."
-            else "Answers come from a built-in guide on this phone, so they work with no signal. " +
-                "Download the offline AI model to unlock any topic.",
+            if (hasModel) "On-device AI with a built-in first-aid guide. Not a substitute for trained responders."
+            else "Built-in guide works offline. Download the AI model to unlock all topics.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         if (!hasModel) {
             Button(onClick = onSetUp) {
                 Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
-                Text(if (downloading) "  Downloading offline AI…" else "  Get offline AI (one-time download)")
+                Text(if (downloading) "  Downloading..." else "  Get offline AI")
             }
         }
     }

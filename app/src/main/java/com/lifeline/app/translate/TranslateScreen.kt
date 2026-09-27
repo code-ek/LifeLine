@@ -153,24 +153,7 @@ fun TranslateScreen() {
             }
         }
 
-        if (model == null) {
-            Card(
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
-            ) {
-                Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Text("Offline AI model needed", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
-                    Text(
-                        "Download a small AI model to translate between languages, right on this phone with no internet.",
-                        style = MaterialTheme.typography.bodySmall
-                    )
-                    Button(onClick = { showModels = true }, modifier = Modifier.align(Alignment.End)) {
-                        Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
-                        Text(" Set up AI", modifier = Modifier.padding(start = 4.dp))
-                    }
-                }
-            }
-        }
+
 
         Row(
             Modifier.fillMaxWidth().padding(horizontal = 16.dp),
@@ -346,8 +329,7 @@ private fun EmptyHint(mine: Language, theirs: Language) {
         ) {
             Text("How it works", fontWeight = FontWeight.SemiBold)
             Text(
-                "Tap your microphone and speak ${mine.name}; the phone translates into ${theirs.name} and reads it aloud. " +
-                    "Hand them the phone and they tap theirs. Tap any translation to show it in big text.",
+                "Tap a mic, speak ${mine.name}, and it translates to ${theirs.name}. Tap any bubble to enlarge.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -366,7 +348,7 @@ private fun NoModelCard(onSetUp: () -> Unit) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                "Translation runs on the offline AI model. Download it once while you have internet.",
+                "Needs an offline AI model. Download once while online.",
                 color = MaterialTheme.colorScheme.onTertiaryContainer
             )
             Button(onClick = onSetUp) {
@@ -405,7 +387,7 @@ private fun TranslationBubble(item: TranslationItem, onShow: () -> Unit, onRepla
                 }
             }
             Text(
-                item.translated.ifBlank { if (item.done) "—" else "…" },
+                item.translated.ifBlank { if (item.done) "-" else "..." },
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.SemiBold
             )
