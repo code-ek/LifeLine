@@ -22,12 +22,31 @@ object SosCodec {
 
     private const val HEADER_PREFIX = "🆘 SOS ["
     private const val META_PREFIX = "sos/1 "
+    private const val CANCEL_HEADER = "🆘 SOS CANCEL"
+    private const val CANCEL_META_PREFIX = "sos/1 cancel "
     private val ID_PATTERN = Regex("[0-9a-f]{8,32}")
     private val random = SecureRandom()
 
     fun newId(): String {
         val bytes = ByteArray(8).also(random::nextBytes)
         return bytes.joinToString("") { "%02x".format(it) }
+    }
+
+    fun encodeCancel(id: String, timestampMs: Long = System.currentTimeMillis()): String =
+        "$CANCEL_HEADER\n${CANCEL_META_PREFIX}id=$id ts=$timestampMs"
+
+    fun decodeCancel(content: String): String? {
+        val lines = content.lines()
+        if (lines.size < 2) return null
+        if (lines[0] != CANCEL_HEADER || !lines[1].startsWith(CANCEL_META_PREFIX)) return null
+        val fields = lines[1].removePrefix(CANCEL_META_PREFIX)
+            .split(' ')
+            .mapNotNull { token ->
+                val eq = token.indexOf('=')
+                if (eq <= 0) null else token.substring(0, eq) to token.substring(eq + 1)
+            }
+            .toMap()
+        return fields["id"]?.takeIf { ID_PATTERN.matches(it) }
     }
 
     fun sanitizeDescription(raw: String): String =

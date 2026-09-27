@@ -39,6 +39,8 @@ import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.SwapHoriz
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -148,6 +150,25 @@ fun TranslateScreen() {
                     if (autoSpeak) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff,
                     contentDescription = if (autoSpeak) "Reading translations aloud" else "Not reading aloud"
                 )
+            }
+        }
+
+        if (model == null) {
+            Card(
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
+            ) {
+                Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Text("Offline AI model needed", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+                    Text(
+                        "Download a small AI model to translate between languages, right on this phone with no internet.",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                    Button(onClick = { showModels = true }, modifier = Modifier.align(Alignment.End)) {
+                        Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Text(" Set up AI", modifier = Modifier.padding(start = 4.dp))
+                    }
+                }
             }
         }
 

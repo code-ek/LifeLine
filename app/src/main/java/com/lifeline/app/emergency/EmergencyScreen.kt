@@ -140,7 +140,9 @@ fun EmergencyScreen() {
             }
         } else {
             items(alerts, key = { it.payload.id }) { alert ->
-                SosAlertCard(alert, myLocation, now)
+                SosAlertCard(alert, myLocation, now) {
+                    EmergencyRuntime.cancelSos(context, alert.payload.id)
+                }
             }
         }
 
@@ -260,7 +262,7 @@ private fun SosComposer(
 }
 
 @Composable
-private fun SosAlertCard(alert: SosAlert, myLocation: Location?, now: Long) {
+private fun SosAlertCard(alert: SosAlert, myLocation: Location?, now: Long, onCancel: () -> Unit) {
     val sos = alert.payload
     Card(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
@@ -301,6 +303,13 @@ private fun SosAlertCard(alert: SosAlert, myLocation: Location?, now: Long) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+            if (alert.isLocal) {
+                TextButton(
+                    onClick = onCancel,
+                    colors = ButtonDefaults.textButtonColors(contentColor = SosRed),
+                    modifier = Modifier.align(Alignment.End)
+                ) { Text("Cancel SOS", fontWeight = FontWeight.Bold) }
+            }
         }
     }
 }

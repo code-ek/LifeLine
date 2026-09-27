@@ -49,6 +49,11 @@ class EmergencyAlertStore(private val maxAlerts: Int = 200) {
         return true
     }
 
+    @Synchronized
+    fun remove(id: String) {
+        _alerts.update { current -> current.filter { it.payload.id != id } }
+    }
+
     private fun insert(alert: SosAlert) {
         _alerts.update { current ->
             (current + alert)

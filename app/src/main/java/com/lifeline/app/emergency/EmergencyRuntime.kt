@@ -37,6 +37,12 @@ object EmergencyRuntime {
         notifier = EmergencyNotifier(context.applicationContext)
         scope.launch {
             MeshMessageTap.messages.collect { message ->
+                // Handle cancellations
+                SosCodec.decodeCancel(message.content)?.let { cancelledId ->
+                    store.remove(cancelledId)
+                    Log.i(TAG, "SOS $cancelledId cancelled")
+                    return@collect
+                }
                 val now = System.currentTimeMillis()
                 val alert = store.ingest(message, currentPeerID(), now) ?: return@collect
                 Log.i(TAG, "SOS ${alert.payload.id} (${alert.payload.type}) received")
@@ -71,6 +77,19 @@ object EmergencyRuntime {
         mesh.sendMessage(SosCodec.encode(payload))
         store.addLocal(payload, myNickname = null, myPeerID = mesh.myPeerID, nowMs = payload.timestampMs)
         Log.i(TAG, "SOS ${payload.id} (${payload.type}) broadcast")
+        return true
+    }
+
+    fun cancelSos(context: Context, id: String): Boolean {
+        val mesh = try {
+            MeshServiceHolder.getUnifiedOrCreate(context.applicationContext)
+        } catch (e: Exception) {
+            Log.e(TAG, "Mesh service unavailable for cancel: ${e.message}")
+            return false
+        }
+        mesh.sendMessage(SosCodec.encodeCancel(id))
+        store.remove(id)
+        Log.i(TAG, "SOS $id cancelled and broadcast")
         return true
     }
 
