@@ -49,12 +49,12 @@ data class LifeLinePalette(
 )
 
 val DarkLifeLinePalette = LifeLinePalette(
-    inputOutline = Color(0xFF333635),
-    inputOutlineFocused = Color(0xFF5A605D),
-    inputSurface = Color(0xFF0B0B0B),
-    inputSurfaceFocused = Color(0xFF151515),
-    inputButton = Color(0xFF1E1E1E),
-    textTertiary = Color(0xFF6B776B),
+    inputOutline = Color(0xFF2E4032),
+    inputOutlineFocused = Color(0xFF4A6050),
+    inputSurface = Color(0xFF0E1810),
+    inputSurfaceFocused = Color(0xFF142018),
+    inputButton = Color(0xFF1A2A1E),
+    textTertiary = Color(0xFF6B806E),
     accentOrange = Color(0xFFFF9F0A),
     accentPurple = Color(0xFFBF5AF2),
     peerColors = PeerColorStyle.Dark,
