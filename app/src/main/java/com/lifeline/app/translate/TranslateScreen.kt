@@ -321,8 +321,8 @@ private fun LanguagePicker(
 private fun MicButton(language: Language, listening: Boolean, primary: Boolean, modifier: Modifier, onClick: () -> Unit) {
     val colors = if (primary) ButtonDefaults.buttonColors()
     else ButtonDefaults.buttonColors(
-        containerColor = MaterialTheme.colorScheme.tertiary,
-        contentColor = MaterialTheme.colorScheme.onTertiary
+        containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        contentColor = MaterialTheme.colorScheme.onSecondaryContainer
     )
     Button(onClick = onClick, modifier = modifier.height(56.dp), colors = colors, shape = RoundedCornerShape(16.dp)) {
         Icon(Icons.Filled.Mic, contentDescription = null)
@@ -357,18 +357,22 @@ private fun EmptyHint(mine: Language, theirs: Language) {
 
 @Composable
 private fun NoModelCard(onSetUp: () -> Unit) {
-    Column(
-        Modifier.fillMaxWidth().padding(16.dp)
-            .background(MaterialTheme.colorScheme.errorContainer, RoundedCornerShape(16.dp)).padding(14.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
     ) {
-        Text(
-            "Translation runs on the offline AI model. Download it once while you have internet.",
-            color = MaterialTheme.colorScheme.onErrorContainer
-        )
-        Button(onClick = onSetUp) {
-            Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
-            Text("  Get offline AI")
+        Column(
+            Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                "Translation runs on the offline AI model. Download it once while you have internet.",
+                color = MaterialTheme.colorScheme.onTertiaryContainer
+            )
+            Button(onClick = onSetUp) {
+                Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
+                Text("  Get offline AI")
+            }
         }
     }
 }
