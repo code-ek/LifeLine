@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">Verzenden</string>
+
+    <string name="battery_optimization_skip">Nu overslaan</string>
+    <string name="skip">Overslaan</string>
+
+    <string name="notification_messages_from_people">%1$d berichten van %2$d personen</string>
+    <string name="notification_more_conversations">en %1$d meer conversaties</string>
+    <string name="notification_active_peers_title">LifeLine users in de buurt!</string>
+    <string name="notification_active_peers_one">1 persoon in de buurt</string>
+    <string name="notification_active_peers_many">%1$d personen in de buurt</string>
+    <string name="notification_new_location_messages">Nieuwe locatieberichten</string>
+    <string name="notification_mesh_mention_title_singular">Vermeld in meshchat</string>
+    <string name="notification_mesh_mention_title_plural">%1$d vermeldingen in meshchat</string>
+
+    <string name="pick_image">Afbeelding kiezen</string>
+
+    <string name="about_system">systeem</string>
+    <string name="about_light">licht</string>
+    <string name="about_dark">donker</string>
+    <string name="close_plain">Sluiten</string>
+
+    <string name="cd_location_services">Locatiediensten</string>
+    <string name="cd_privacy">Privacy</string>
+    <string name="cd_error">Fout</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Afbeelding</string>
+    <string name="cd_cancel">Annuleren</string>
+    <string name="cd_privacy_protected">Privacy beschermd</string>
+    <string name="cd_record_voice">Spraaknotitie opnemen</string>
+
+    <string name="image_unavailable">Afbeelding niet beschikbaar</string>
+
+    <string name="open_settings">Instellingen openen</string>
+
+    <string name="location_services_required">Locatiediensten vereist</string>
+    <string name="privacy_first">Privacy eerst</string>
+    <string name="location_explanation">LifeLine volgt NIET uw locatie.\n\nLocatiediensten zijn vereist voor Bluetooth-scanning.</string>
+    <string name="location_needs_for">LifeLine heeft locatiediensten nodig voor:</string>
+    <string name="location_needs_bullets">• Bluetooth-apparaat scanning\n• Ontdekken van gebruikers in de buurt op meshnetwerk\n• Geen tracking of locatieverzameling</string>
+    <string name="open_location_settings">Locatie-instellingen openen</string>
+    <string name="check_again">Opnieuw controleren</string>
+    <string name="location_services_unavailable">Locatiediensten niet beschikbaar</string>
+    <string name="location_unavailable_explanation">Locatiediensten zijn niet beschikbaar op dit apparaat. Dit is ongebruikelijk omdat locatiediensten standaard zijn op Android-apparaten.\n\nLifeLine heeft locatiediensten nodig om Bluetooth-scanning goed te laten werken (Android-vereiste). Zonder dit kan de app geen gebruikers in de buurt ontdekken.</string>
+    <string name="checking_location_services">Locatiediensten controleren…</string>
+    <string name="bluetooth_needs_for">LifeLine heeft Bluetooth nodig om:</string>
+    <string name="bluetooth_needs_bullets">• Gebruikers in de buurt te ontdekken\n• Meshnetwerkverbindingen te maken\n• Berichten te verzenden en ontvangen\n• Te werken zonder internet of servers</string>
+    <string name="enable_bluetooth">Bluetooth inschakelen</string>
+    <string name="bluetooth_not_supported">Bluetooth niet ondersteund</string>
+    <string name="bluetooth_unsupported_explanation">Dit apparaat ondersteunt geen Bluetooth Low Energy (BLE), wat vereist is om LifeLine te laten functioneren.\n\nLifeLine heeft BLE nodig om meshnetwerken te maken en te communiceren met apparaten in de buurt zonder internet.</string>
+    <string name="checking_bluetooth_status">Bluetooth-status controleren…</string>
+    <string name="continue_btn">Doorgaan</string>
+    <string name="initializing_mesh_network">Meshnetwerk initialiseren</string>
+    <string name="setting_up_bluetooth">Bluetooth-meshnetwerk instellen…</string>
+    <string name="should_take_seconds">Dit zou slechts enkele seconden moeten duren</string>
+    <string name="setup_not_complete">Installatie niet voltooid</string>
+    <string name="try_again">Opnieuw proberen</string>
+    <string name="type_a_message_placeholder">typ een bericht…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Annuleren</string>
+
+    <string name="dot">.</string>
+    <string name="warning_emoji">⚠️</string>
+
+    <string name="bluetooth_recommended">Bluetooth aanbevolen</string>
+    <string name="mesh_service_notification_content">Mesh actief — %1$d peers</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">Taal</string>
+    <string name="about_app_language">App-taal</string>
+    <string name="about_system_default">Systeemstandaard</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">en %d meer</item>
+        <item quantity="other">en %d meer</item>
+    </plurals>
+</resources>

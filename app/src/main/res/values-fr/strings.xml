@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">Envoyer</string>
+
+    <string name="battery_optimization_skip">Ignorer pour l’instant</string>
+    <string name="skip">Ignorer</string>
+
+    <string name="notification_messages_from_people">%1$d messages de %2$d personnes</string>
+    <string name="notification_more_conversations">et %1$d conversations de plus</string>
+    <string name="notification_active_peers_title">LifeLine users à proximité !</string>
+    <string name="notification_active_peers_one">1 personne à proximité</string>
+    <string name="notification_active_peers_many">%1$d personnes à proximité</string>
+    <string name="notification_new_location_messages">Nouveaux messages de lieu</string>
+    <string name="notification_mesh_mention_title_singular">Mentionné dans le chat Mesh</string>
+    <string name="notification_mesh_mention_title_plural">%1$d mentions dans le chat Mesh</string>
+
+    <string name="pick_image">Choisir une image</string>
+
+    <string name="about_system">système</string>
+    <string name="about_light">clair</string>
+    <string name="about_dark">sombre</string>
+    <string name="close_plain">Fermer</string>
+
+    <string name="cd_location_services">Services de localisation</string>
+    <string name="cd_privacy">Confidentialité</string>
+    <string name="cd_error">Erreur</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Image</string>
+    <string name="cd_cancel">Annuler</string>
+    <string name="cd_record_voice">Enregistrer un message vocal</string>
+
+    <string name="image_unavailable">Image indisponible</string>
+
+    <string name="open_settings">Ouvrir les paramètres</string>
+
+    <string name="location_services_required">Services de localisation requis</string>
+    <string name="privacy_first">Confidentialité d’abord</string>
+    <string name="location_explanation">LifeLine ne suit PAS ta position.\n\nLes services de localisation sont requis pour le scan Bluetooth.</string>
+    <string name="location_needs_for">LifeLine a besoin des services de localisation pour :</string>
+    <string name="location_needs_bullets">• Scan des appareils Bluetooth\n• Découvrir les utilisateurs à proximité sur le réseau mesh\n• Pas de suivi ni de collecte de position</string>
+    <string name="open_location_settings">Ouvrir les paramètres de localisation</string>
+    <string name="check_again">Vérifier à nouveau</string>
+    <string name="location_services_unavailable">Services de localisation indisponibles</string>
+    <string name="location_unavailable_explanation">Les services de localisation ne sont pas disponibles sur cet appareil. C’est inhabituel car ils sont standard sur Android.\n\nL’app en a besoin pour que le scan Bluetooth fonctionne correctement (exigence Android). Sans cela, l’app ne peut pas découvrir les utilisateurs à proximité.</string>
+    <string name="checking_location_services">Vérification des services de localisation…</string>
+    <string name="bluetooth_needs_for">LifeLine a besoin de Bluetooth pour :</string>
+    <string name="bluetooth_needs_bullets">• Découvrir les utilisateurs à proximité\n• Créer des connexions de réseau mesh\n• Envoyer et recevoir des messages\n• Fonctionner sans internet ni serveurs</string>
+    <string name="enable_bluetooth">Activer Bluetooth</string>
+    <string name="bluetooth_not_supported">Bluetooth non pris en charge</string>
+    <string name="bluetooth_unsupported_explanation">Cet appareil ne prend pas en charge Bluetooth Low Energy (BLE), requis pour le fonctionnement de LifeLine.\n\nLifeLine a besoin de BLE pour créer des réseaux mesh et communiquer sans internet avec les appareils à proximité.</string>
+    <string name="checking_bluetooth_status">Vérification du statut Bluetooth…</string>
+    <string name="continue_btn">Continuer</string>
+    <string name="initializing_mesh_network">Initialisation du réseau mesh</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">Configuration du mesh Bluetooth…</string>
+    <string name="should_take_seconds">Cela ne devrait prendre que quelques secondes</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">Configuration incomplète</string>
+    <string name="try_again">Réessayer</string>
+    <string name="type_a_message_placeholder">écrire un message…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Annuler</string>
+
+    <string name="bluetooth_recommended">Bluetooth recommandé</string>
+    <string name="mesh_service_notification_content">Mesh actif — %1$d pairs</string>
+
+  <string name="verify_title">vérifier</string>
+  <string name="verify_my_qr_title">scanner pour me vérifier</string>
+  <string name="verify_scan_prompt_friend">scanner un autre qr</string>
+  <string name="verify_remove">supprimer la vérification</string>
+  <string name="verify_qr_unavailable">qr indisponible</string>
+  <string name="verify_camera_permission">permission caméra requise</string>
+  <string name="verify_request_camera">activer caméra</string>
+  <string name="verify_mutual_match_title">Vérification mutuelle</string>
+  <string name="verify_mutual_match_body">Vous et %1$s êtes vérifiés</string>
+  <string name="verify_mutual_system_message">vérification mutuelle avec %1$s</string>
+  <string name="verify_success_title">Vérifié</string>
+  <string name="verify_success_body">Vous avez vérifié %1$s</string>
+  <string name="verify_success_system_message">vérifié %1$s</string>
+    <string name="about_language">Langue</string>
+    <string name="about_app_language">Langue de l’appli</string>
+    <string name="about_system_default">Langue du système</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">et %d de plus</item>
+        <item quantity="other">et %d de plus</item>
+    </plurals>
+</resources>

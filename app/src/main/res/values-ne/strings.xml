@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">पठाउनुहोस्</string>
+
+    <string name="battery_optimization_skip">अहिलेलाई बेवास्ता गर्नुहोस्</string>
+    <string name="skip">बेवास्ता गर्नुहोस्</string>
+
+    <string name="notification_messages_from_people">%1$d सन्देश %2$d जनाबाट</string>
+    <string name="notification_more_conversations">र %1$d अरू कुराकानी</string>
+    <string name="notification_active_peers_title">नजिकै LifeLine हरू!</string>
+    <string name="notification_active_peers_one">१ जना नजिकै</string>
+    <string name="notification_active_peers_many">%1$d जना नजिकै</string>
+    <string name="notification_new_location_messages">नयाँ स्थान सन्देश</string>
+    <string name="notification_mesh_mention_title_singular">मेष च्याटमा उल्लेख</string>
+    <string name="notification_mesh_mention_title_plural">मेष च्याटमा %1$d उल्लेख</string>
+
+    <string name="pick_image">तस्वीर छान्नुहोस्</string>
+
+    <string name="about_system">सिस्टम</string>
+    <string name="about_light">हल्का</string>
+    <string name="about_dark">गाढा</string>
+    <string name="close_plain">बन्द गर्नुहोस्</string>
+
+    <string name="cd_location_services">स्थान सेवाहरू</string>
+    <string name="cd_privacy">गोपनीयता</string>
+    <string name="cd_error">त्रुटि</string>
+    <string name="cd_bluetooth">ब्लुटुथ</string>
+    <string name="cd_image">तस्वीर</string>
+    <string name="cd_cancel">रद्द</string>
+    <string name="cd_record_voice">भ्वाइस नोट रेकर्ड</string>
+
+    <string name="image_unavailable">तस्वीर उपलब्ध छैन</string>
+
+    <string name="open_settings">सेटिङ खोल्नुहोस्</string>
+
+    <string name="location_services_required">स्थान सेवाहरू आवश्यक</string>
+    <string name="privacy_first">गोपनीयता पहिलो</string>
+    <string name="location_explanation">LifeLine ले तपाईंको स्थान पछ्याउँदैन।\n\nब्लुटुथ स्क्यानका लागि स्थान सेवा आवश्यक छन्।</string>
+    <string name="location_needs_for">LifeLine लाई स्थान सेवा आवश्यक पर्छ:</string>
+    <string name="location_needs_bullets">• ब्लुटुथ यन्त्र स्क्यान\n• मेष सञ्जालमा नजिकका प्रयोगकर्ता पत्ता लगाउने\n• कुनै ट्र्याकिङ वा स्थान सङ्कलन छैन</string>
+    <string name="open_location_settings">स्थान सेटिङ खोल्नुहोस्</string>
+    <string name="check_again">फेरि जाँच्नुहोस्</string>
+    <string name="location_services_unavailable">स्थान सेवाहरू उपलब्ध छैनन्</string>
+    <string name="location_unavailable_explanation">यस यन्त्रमा स्थान सेवाहरू उपलब्ध छैनन्। यो असामान्य हो किनकि Android यन्त्रमा यो मानक हो।\n\nब्लुटुथ स्क्यान ठीकसँग चल्न (Android को आवश्यक) स्थान सेवा चाहिन्छ। अन्यथा नजिकका प्रयोगकर्ता पत्ता लाग्दैनन्।</string>
+    <string name="checking_location_services">स्थान सेवाहरू जाँचिँदै…</string>
+    <string name="bluetooth_needs_for">LifeLine लाई ब्लुटुथ आवश्यक छ:</string>
+    <string name="bluetooth_needs_bullets">• नजिकका प्रयोगकर्ता पत्ता लगाउने\n• मेष जडान बनाउने\n• सन्देश पठाउने/प्राप्त गर्ने\n• इन्टरनेट वा सर्भर बिना काम गर्ने</string>
+    <string name="enable_bluetooth">ब्लुटुथ सक्षम गर्नुहोस्</string>
+    <string name="bluetooth_not_supported">ब्लुटुथ समर्थित छैन</string>
+    <string name="bluetooth_unsupported_explanation">यो यन्त्रले Bluetooth Low Energy (BLE) समर्थन गर्दैन, जुन LifeLine को लागि आवश्यक छ।\n\nनजिकका यन्त्रहरूसँग इन्टरनेट बिना सञ्चार गर्न र मेष बनाउन BLE चाहिन्छ।</string>
+    <string name="checking_bluetooth_status">ब्लुटुथ स्थिति जाँचिँदै…</string>
+    <string name="continue_btn">जारी राख्नुहोस्</string>
+    <string name="initializing_mesh_network">मेष सञ्जाल सुरु गर्दै</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">ब्लुटुथ मेष सेटअप गर्दै…</string>
+    <string name="should_take_seconds">यसलाई केही सेकेन्ड मात्र लाग्छ</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">सेटअप पूरा भएन</string>
+    <string name="try_again">फेरि प्रयास गर्नुहोस्</string>
+    <string name="type_a_message_placeholder">सन्देश टाइप गर्नुहोस्…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">रद्द</string>
+
+    <string name="bluetooth_recommended">ब्लुटुथ सिफारिस गरिएको</string>
+    <string name="mesh_service_notification_content">मेश चलिरहेको छ — %1$d पियर्स</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">भाषा</string>
+    <string name="about_app_language">एपको भाषा</string>
+    <string name="about_system_default">प्रणालीको पूर्वनिर्धारित</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">र %d थप</item>
+        <item quantity="other">र %d थप</item>
+    </plurals>
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">پھجو</string>
+
+    <string name="battery_optimization_skip">ہور ویلے</string>
+    <string name="skip">سکِپ</string>
+
+    <string name="notification_messages_from_people">%2$d لوکان کولوں %1$d پیغام</string>
+    <string name="notification_more_conversations">تے %1$d ہور گلاں</string>
+    <string name="notification_active_peers_title">نیڑے LifeLine!</string>
+    <string name="notification_active_peers_one">نیڑے 1 بندہ</string>
+    <string name="notification_active_peers_many">نیڑے %1$d بندے</string>
+    <string name="notification_new_location_messages">نویں لوکیشن پیغام</string>
+    <string name="notification_mesh_mention_title_singular">میش چیٹ وچ ذکر</string>
+    <string name="notification_mesh_mention_title_plural">میش چیٹ وچ %1$d ذکر</string>
+
+    <string name="pick_image">تصویر چُنو</string>
+
+    <string name="about_system">سسٹم</string>
+    <string name="about_light">ہلکا</string>
+    <string name="about_dark">گھُپ</string>
+    <string name="close_plain">بند کرو</string>
+
+    <string name="cd_location_services">لوکیشن سروسز</string>
+    <string name="cd_privacy">پرائیویسی</string>
+    <string name="cd_error">غلطی</string>
+    <string name="cd_bluetooth">بلوٹوتھ</string>
+    <string name="cd_image">تصویر</string>
+    <string name="cd_cancel">منسوخ</string>
+    <string name="cd_privacy_protected">پرائیویسی محفوظ اے</string>
+    <string name="cd_record_voice">وائس پیغام ریکارڈ کرو</string>
+
+    <string name="image_unavailable">تصویر دستیاب نئیں</string>
+
+    <string name="open_settings">سیٹنگز کھولو</string>
+
+    <string name="location_services_required">لوکیشن سروسز لازمی نیں</string>
+    <string name="privacy_first">پرائیویسی پہلے</string>
+    <string name="location_explanation">LifeLine توانڈی لوکیشن نئیں ٹریک کردا۔\n\nبلوٹوتھ سکیننگ لئی لوکیشن سروسز دی لوڑ اے۔</string>
+    <string name="location_needs_for">LifeLine نوں لوکیشن سروسز دی لوڑ اے لئی:</string>
+    <string name="location_needs_bullets">• بلوٹوتھ ڈیوائس سکیننگ\n• میش نیٹ ورک وچ نیڑے یوزراں دی تلاش\n• کوئی ٹریکنگ یا لوکیشن جمع نئیں</string>
+    <string name="open_location_settings">لوکیشن سیٹنگز کھولو</string>
+    <string name="check_again">فیر چیک کرو</string>
+    <string name="location_services_unavailable">لوکیشن سروسز دستیاب نئیں</string>
+    <string name="location_unavailable_explanation">اس ڈیوائس تے لوکیشن سروسز دستیاب نئیں۔ ایہ غیر معمولی اے کیونجے Android ڈیوائساں تے لوکیشن سروسز معیاری نیں۔\n\nبلوٹوتھ سکیننگ نوں ٹھیک کم کرن لئی LifeLine نوں لوکیشن سروسز چاہیدیاں نیں (Android دی شرط)۔ بنا اس دے، ایپ نیڑے یوزر نئیں لبھ سکدی۔</string>
+    <string name="checking_location_services">لوکیشن سروسز چیک ہورھیاں نیں …</string>
+    <string name="bluetooth_needs_for">LifeLine نوں بلوٹوتھ چاہیدا اے لئی:</string>
+    <string name="bluetooth_needs_bullets">• نیڑے یوزر لبھنا\n• میش نیٹ ورک کنکشن بنانا\n• پیغام بھیجنا تے لینا\n• انٹرنیٹ یا سرور توں بغیر کم کرنا</string>
+    <string name="enable_bluetooth">بلوٹوتھ چالو کرو</string>
+    <string name="bluetooth_not_supported">بلوٹوتھ سپورٹڈ نئیں</string>
+    <string name="bluetooth_unsupported_explanation">ایہ ڈیوائس Bluetooth Low Energy (BLE) نئیں سپورٹ کردا، جو LifeLine لئی ضروری اے۔\n\nLifeLine نوں BLE چاہیدا اے میش نیٹ ورک بناؤن تے نیڑے ڈیوائساں نال انٹرنیٹ توں بغیر گل کرن لئی۔</string>
+    <string name="checking_bluetooth_status">بلوٹوتھ حالت چیک ہورہی اے …</string>
+    <string name="continue_btn">جاری رکھو</string>
+    <string name="initializing_mesh_network">میش نیٹ ورک شروع ہورہا اے</string>
+    <string name="setting_up_bluetooth">بلوٹوتھ میش نیٹ ورک سیٹ اپ ہورہا …</string>
+    <string name="should_take_seconds">ایہ صرف چند سیکنڈ لگنے چاہیدے نیں</string>
+    <string name="setup_not_complete">سیٹ اپ مکمل نئیں</string>
+    <string name="try_again">فیر کوشِش کرو</string>
+    <string name="type_a_message_placeholder">پیغام لکھو …</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">منسوخ</string>
+
+    <string name="bluetooth_recommended">Bluetooth Recommended</string>
+    <string name="mesh_service_notification_content">میش چل رہا ہے — %1$d ساتھی</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">بولی</string>
+    <string name="about_app_language">ایپ دی بولی</string>
+    <string name="about_system_default">سسٹم دی ڈیفالٹ</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">تے %d ہور</item>
+        <item quantity="other">تے %d ہور</item>
+    </plurals>
+</resources>

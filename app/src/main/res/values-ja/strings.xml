@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">送信</string>
+
+    <string name="battery_optimization_skip">今はスキップ</string>
+    <string name="skip">スキップ</string>
+
+    <string name="notification_messages_from_people">%2$d 人からの %1$d 件のメッセージ</string>
+    <string name="notification_more_conversations">ほか %1$d 会話</string>
+    <string name="notification_active_peers_title">近くに LifeLine ！</string>
+    <string name="notification_active_peers_one">近くに 1 人</string>
+    <string name="notification_active_peers_many">近くに %1$d 人</string>
+    <string name="notification_new_location_messages">新しい位置情報メッセージ</string>
+    <string name="notification_mesh_mention_title_singular">メッシュチャットでメンション</string>
+    <string name="notification_mesh_mention_title_plural">メッシュチャットで %1$d 件のメンション</string>
+
+    <string name="pick_image">画像を選択</string>
+
+    <string name="about_system">システム</string>
+    <string name="about_light">ライト</string>
+    <string name="about_dark">ダーク</string>
+    <string name="close_plain">閉じる</string>
+
+    <string name="cd_location_services">位置情報サービス</string>
+    <string name="cd_privacy">プライバシー</string>
+    <string name="cd_error">エラー</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">画像</string>
+    <string name="cd_cancel">キャンセル</string>
+    <string name="cd_privacy_protected">プライバシー保護</string>
+    <string name="cd_record_voice">ボイスメモを録音</string>
+
+    <string name="image_unavailable">画像は利用できません</string>
+
+    <string name="open_settings">設定を開く</string>
+
+    <string name="location_services_required">位置情報サービスが必要です</string>
+    <string name="privacy_first">プライバシー第一</string>
+    <string name="location_explanation">LifeLine はあなたの位置情報を追跡しません。\n\n位置情報サービスは Bluetooth スキャンに必要です。</string>
+    <string name="location_needs_for">LifeLine が位置情報サービスを必要とする理由:</string>
+    <string name="location_needs_bullets">• Bluetooth デバイスのスキャン\n• メッシュネットワークで近くのユーザーを発見\n• 位置情報の追跡や収集は行いません</string>
+    <string name="open_location_settings">位置情報の設定を開く</string>
+    <string name="check_again">再確認</string>
+    <string name="location_services_unavailable">位置情報サービスが利用できません</string>
+    <string name="location_unavailable_explanation">この端末では位置情報サービスが利用できません。Android 端末では通常標準機能のため、これは珍しい状況です。\n\nBluetooth スキャン (Android の要件) を正しく動作させるために位置情報サービスが必要です。これがないと、近くのユーザーを検出できません。</string>
+    <string name="checking_location_services">位置情報サービスを確認中…</string>
+    <string name="bluetooth_needs_for">LifeLine が Bluetooth を必要とする理由:</string>
+    <string name="bluetooth_needs_bullets">• 近くのユーザーを発見\n• メッシュネットワーク接続を作成\n• メッセージの送受信\n• インターネットやサーバーなしで動作</string>
+    <string name="enable_bluetooth">Bluetooth を有効にする</string>
+    <string name="bluetooth_not_supported">Bluetooth はサポートされていません</string>
+    <string name="bluetooth_unsupported_explanation">この端末は Bluetooth Low Energy (BLE) をサポートしていません。LifeLine の動作に必要です。\n\nBLE は、インターネットなしで近くのデバイスとメッシュネットワークを作るために必要です。</string>
+    <string name="checking_bluetooth_status">Bluetooth ステータスを確認中…</string>
+    <string name="continue_btn">続行</string>
+    <string name="initializing_mesh_network">メッシュネットワークを初期化中</string>
+    <string name="setting_up_bluetooth">Bluetooth メッシュネットワークを設定中…</string>
+    <string name="should_take_seconds">数秒で完了するはずです</string>
+    <string name="setup_not_complete">設定が完了していません</string>
+    <string name="try_again">再試行</string>
+    <string name="type_a_message_placeholder">メッセージを入力…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">キャンセル</string>
+
+    <string name="bluetooth_recommended">Bluetooth推奨</string>
+    <string name="mesh_service_notification_content">メッシュ実行中 — %1$d ピア</string>
+
+  <string name="verify_title">検証</string>
+  <string name="verify_my_qr_title">私を検証するためにスキャン</string>
+  <string name="verify_scan_prompt_friend">他人のQRをスキャン</string>
+  <string name="verify_remove">検証を削除</string>
+  <string name="verify_qr_unavailable">QR利用不可</string>
+  <string name="verify_camera_permission">QRスキャンにカメラ権限が必要です</string>
+  <string name="verify_request_camera">カメラを有効化</string>
+  <string name="verify_mutual_match_title">相互検証</string>
+  <string name="verify_mutual_match_body">あなたと %1$s は相互に検証しました</string>
+  <string name="verify_mutual_system_message">%1$s と相互検証しました</string>
+  <string name="verify_success_title">検証済み</string>
+  <string name="verify_success_body">%1$s を検証しました</string>
+  <string name="verify_success_system_message">%1$s を検証しました</string>
+    <string name="about_language">言語</string>
+    <string name="about_app_language">アプリの言語</string>
+    <string name="about_system_default">システムのデフォルト</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">ほか %d</item>
+        <item quantity="other">ほか %d</item>
+    </plurals>
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">भेजें</string>
+
+    <string name="battery_optimization_skip">अभी छोड़ें</string>
+    <string name="skip">छोड़ें</string>
+
+    <string name="notification_messages_from_people">%2$d लोगों से %1$d संदेश</string>
+    <string name="notification_more_conversations">और %1$d वार्तालाप</string>
+    <string name="notification_active_peers_title">पास में उपयोगकर्ता!</string>
+    <string name="notification_active_peers_one">पास में 1 व्यक्ति</string>
+    <string name="notification_active_peers_many">पास में %1$d लोग</string>
+    <string name="notification_new_location_messages">नई स्थान संदेश</string>
+    <string name="notification_mesh_mention_title_singular">मेष चैट में उल्लेख</string>
+    <string name="notification_mesh_mention_title_plural">मेष चैट में %1$d उल्लेख</string>
+
+    <string name="pick_image">छवि चुनें</string>
+
+    <string name="about_system">सिस्टम</string>
+    <string name="about_light">लाइट</string>
+    <string name="about_dark">डार्क</string>
+    <string name="close_plain">बंद करें</string>
+
+    <string name="cd_location_services">स्थान सेवाएँ</string>
+    <string name="cd_privacy">गोपनीयता</string>
+    <string name="cd_error">त्रुटि</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">छवि</string>
+    <string name="cd_cancel">रद्द करें</string>
+    <string name="cd_privacy_protected">गोपनीयता सुरक्षित</string>
+    <string name="cd_record_voice">वॉइस नोट रिकॉर्ड करें</string>
+
+    <string name="image_unavailable">छवि उपलब्ध नहीं</string>
+
+    <string name="open_settings">सेटिंग्स खोलें</string>
+
+    <string name="location_services_required">स्थान सेवाएँ आवश्यक</string>
+    <string name="privacy_first">गोपनीयता पहले</string>
+    <string name="location_explanation">LifeLine आपकी लोकेशन ट्रैक नहीं करती।\n\nBluetooth स्कैनिंग के लिए स्थान सेवाएँ आवश्यक हैं।</string>
+    <string name="location_needs_for">LifeLine को इन कारणों से स्थान सेवाएँ चाहिए:</string>
+    <string name="location_needs_bullets">• Bluetooth डिवाइस स्कैनिंग\n• मेष नेटवर्क में पास के उपयोगकर्ताओं की खोज\n• कोई ट्रैकिंग या लोकेशन संग्रह नहीं</string>
+    <string name="open_location_settings">स्थान सेटिंग्स खोलें</string>
+    <string name="check_again">फिर से जाँचें</string>
+    <string name="location_services_unavailable">स्थान सेवाएँ उपलब्ध नहीं</string>
+    <string name="location_unavailable_explanation">इस डिवाइस पर स्थान सेवाएँ उपलब्ध नहीं हैं। यह असामान्य है क्योंकि Android डिवाइसों पर वे सामान्यतः होती हैं।\n\nBluetooth स्कैनिंग (Android आवश्यकता) के ठीक से काम करने के लिए स्थान सेवाएँ जरूरी हैं। इसके बिना ऐप पास के उपयोगकर्ताओं को नहीं ढूँढ़ सकती।</string>
+    <string name="checking_location_services">स्थान सेवाएँ जाँची जा रही हैं…</string>
+    <string name="bluetooth_needs_for">LifeLine को Bluetooth की आवश्यकता:</string>
+    <string name="bluetooth_needs_bullets">• पास के उपयोगकर्ताओं की खोज\n• मेष कनेक्शन बनाना\n• संदेश भेजना और प्राप्त करना\n• इंटरनेट या सर्वर के बिना काम करना</string>
+    <string name="enable_bluetooth">Bluetooth चालू करें</string>
+    <string name="bluetooth_not_supported">Bluetooth समर्थित नहीं</string>
+    <string name="bluetooth_unsupported_explanation">यह डिवाइस Bluetooth Low Energy (BLE) को सपोर्ट नहीं करता, जो LifeLine के लिए आवश्यक है।\n\nइंटरनेट के बिना पास के डिवाइसों के साथ मेष नेटवर्क बनाने और संवाद करने के लिए BLE आवश्यक है।</string>
+    <string name="checking_bluetooth_status">Bluetooth स्थिति जाँच रहे हैं…</string>
+    <string name="continue_btn">जारी रखें</string>
+    <string name="initializing_mesh_network">मेष नेटवर्क प्रारंभ कर रहे हैं</string>
+    <string name="setting_up_bluetooth">Bluetooth मेष नेटवर्क सेट कर रहे हैं…</string>
+    <string name="should_take_seconds">इसमें केवल कुछ सेकंड लगेंगे</string>
+    <string name="setup_not_complete">सेटअप पूरा नहीं हुआ</string>
+    <string name="try_again">फिर से प्रयास करें</string>
+    <string name="type_a_message_placeholder">संदेश लिखें…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">रद्द करें</string>
+
+    <string name="bluetooth_recommended">ब्लूटूथ अनुशंसित</string>
+    <string name="mesh_service_notification_content">मेश चल रहा है — %1$d पीयर्स</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">भाषा</string>
+    <string name="about_app_language">ऐप की भाषा</string>
+    <string name="about_system_default">सिस्टम डिफ़ॉल्ट</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">और %d</item>
+        <item quantity="other">और %d</item>
+    </plurals>
+</resources>

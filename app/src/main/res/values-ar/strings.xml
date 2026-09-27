@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">إرسال</string>
+
+    <string name="battery_optimization_skip">تخطي الآن</string>
+    <string name="skip">تخطي</string>
+
+    <string name="notification_messages_from_people">%1$d رسالة من %2$d أشخاص</string>
+    <string name="notification_more_conversations">و%1$d محادثات أخرى</string>
+    <string name="notification_active_peers_title">مستخدمون قريبون!</string>
+    <string name="notification_active_peers_one">شخص واحد قريب</string>
+    <string name="notification_active_peers_many">%1$d أشخاص قريبون</string>
+    <string name="notification_new_location_messages">رسائل موقع جديدة</string>
+    <string name="notification_mesh_mention_title_singular">تم ذكرك في محادثة الشبكة</string>
+    <string name="notification_mesh_mention_title_plural">%1$d من الإشارات في محادثة الشبكة</string>
+
+    <string name="pick_image">اختيار صورة</string>
+
+    <string name="about_system">النظام</string>
+    <string name="about_light">فاتح</string>
+    <string name="about_dark">داكن</string>
+    <string name="close_plain">إغلاق</string>
+
+    <string name="cd_location_services">خدمات الموقع</string>
+    <string name="cd_privacy">الخصوصية</string>
+    <string name="cd_error">خطأ</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">صورة</string>
+    <string name="cd_cancel">إلغاء</string>
+    <string name="cd_privacy_protected">الخصوصية محمية</string>
+    <string name="cd_record_voice">تسجيل مذكرة صوتية</string>
+
+    <string name="image_unavailable">الصورة غير متاحة</string>
+
+    <string name="open_settings">فتح الإعدادات</string>
+
+    <string name="location_services_required">خدمات الموقع مطلوبة</string>
+    <string name="privacy_first">الخصوصية أولاً</string>
+    <string name="location_explanation">LifeLine لا يتتبع موقعك.\n\nخدمات الموقع مطلوبة لمسح البلوتوث.</string>
+    <string name="location_needs_for">LifeLine يحتاج خدمات الموقع من أجل:</string>
+    <string name="location_needs_bullets">• مسح أجهزة البلوتوث\n• اكتشاف المستخدمين القريبين في شبكة mesh\n• بدون تتبع أو جمع للموقع</string>
+    <string name="open_location_settings">فتح إعدادات الموقع</string>
+    <string name="check_again">التحقق مرة أخرى</string>
+    <string name="location_services_unavailable">خدمات الموقع غير متاحة</string>
+    <string name="location_unavailable_explanation">خدمات الموقع غير متاحة على هذا الجهاز. هذا غير معتاد لأن خدمات الموقع قياسية في أجهزة أندرويد.\n\nتتطلب LifeLine خدمات الموقع لعمل مسح البلوتوث بشكل صحيح (متطلب أندرويد). بدون ذلك لا يمكن للتطبيق اكتشاف المستخدمين القريبين.</string>
+    <string name="checking_location_services">جارٍ التحقق من خدمات الموقع…</string>
+    <string name="bluetooth_needs_for">LifeLine يحتاج البلوتوث من أجل:</string>
+    <string name="bluetooth_needs_bullets">• اكتشاف المستخدمين القريبين\n• إنشاء اتصالات شبكة mesh\n• إرسال واستقبال الرسائل\n• العمل بدون إنترنت أو خوادم</string>
+    <string name="enable_bluetooth">تفعيل البلوتوث</string>
+    <string name="bluetooth_not_supported">البلوتوث غير مدعوم</string>
+    <string name="bluetooth_unsupported_explanation">هذا الجهاز لا يدعم Bluetooth Low Energy (BLE) المطلوب لعمل LifeLine.\n\nتحتاج LifeLine إلى BLE لإنشاء شبكات mesh والتواصل مع الأجهزة القريبة بدون إنترنت.</string>
+    <string name="checking_bluetooth_status">جارٍ التحقق من حالة البلوتوث…</string>
+    <string name="continue_btn">متابعة</string>
+    <string name="initializing_mesh_network">جارٍ تهيئة شبكة mesh</string>
+    <string name="setting_up_bluetooth">جارٍ إعداد شبكة Bluetooth mesh…</string>
+    <string name="should_take_seconds">يجب أن يستغرق ذلك بضع ثوانٍ فقط</string>
+    <string name="setup_not_complete">الإعداد غير مكتمل</string>
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="type_a_message_placeholder">اكتب رسالة…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">إلغاء</string>
+
+    <string name="bluetooth_recommended">بلوتوث موصى به</string>
+    <string name="mesh_service_notification_content">الشبكة تعمل — %1$d أقران</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">اللغة</string>
+    <string name="about_app_language">لغة التطبيق</string>
+    <string name="about_system_default">إعداد النظام الافتراضي</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">و%d إضافية</item>
+        <item quantity="other">و%d إضافية</item>
+    </plurals>
+</resources>

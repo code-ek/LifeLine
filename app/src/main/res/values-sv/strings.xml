@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+    <string name="send_message">Skicka</string>
+
+    <string name="battery_optimization_skip">Hoppa över nu</string>
+    <string name="skip">Hoppa över</string>
+
+    <string name="notification_messages_from_people">%1$d meddelanden från %2$d personer</string>
+    <string name="notification_more_conversations">och %1$d fler konversationer</string>
+    <string name="notification_active_peers_title">LifeLine i närheten!</string>
+    <string name="notification_active_peers_one">1 person i närheten</string>
+    <string name="notification_active_peers_many">%1$d personer i närheten</string>
+    <string name="notification_new_location_messages">Nya platsmeddelanden</string>
+    <string name="notification_mesh_mention_title_singular">Nämnd i Mesh‑chatt</string>
+    <string name="notification_mesh_mention_title_plural">%1$d nämningar i Mesh‑chatt</string>
+
+    <string name="pick_image">Välj bild</string>
+
+    <string name="about_system">system</string>
+    <string name="about_light">ljus</string>
+    <string name="about_dark">mörk</string>
+    <string name="close_plain">Stäng</string>
+
+    <string name="cd_location_services">Plats­tjänster</string>
+    <string name="cd_privacy">Integritet</string>
+    <string name="cd_error">Fel</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Bild</string>
+    <string name="cd_cancel">Avbryt</string>
+    <string name="cd_record_voice">Spela in röstanteckning</string>
+
+    <string name="image_unavailable">Bild ej tillgänglig</string>
+
+    <string name="open_settings">Öppna inställningar</string>
+
+    <string name="location_services_required">Platstjänster krävs</string>
+    <string name="privacy_first">Integritet först</string>
+    <string name="location_explanation">LifeLine SPÅRAR INTE din plats.\n\nPlatstjänster krävs för Bluetooth‑skanning.</string>
+    <string name="location_needs_for">LifeLine behöver platstjänster för:</string>
+    <string name="location_needs_bullets">• Bluetooth‑skanning av enheter\n• Hitta användare i närheten i mesh‑nätet\n• Ingen spårning eller insamling</string>
+    <string name="open_location_settings">Öppna platsinställningar</string>
+    <string name="check_again">Kontrollera igen</string>
+    <string name="location_services_unavailable">Platstjänster inte tillgängliga</string>
+    <string name="location_unavailable_explanation">Platstjänster saknas på den här enheten. Det är ovanligt.\n\nAndroid kräver dem för att Bluetooth‑skanning ska fungera. Utan dem kan vi inte hitta användare i närheten.</string>
+    <string name="checking_location_services">Kontrollerar platstjänster…</string>
+    <string name="bluetooth_needs_for">LifeLine behöver Bluetooth för:</string>
+    <string name="bluetooth_needs_bullets">• Hitta användare i närheten\n• Skapa mesh‑anslutningar\n• Skicka och ta emot meddelanden\n• Fungera utan internet/ servrar</string>
+    <string name="enable_bluetooth">Aktivera Bluetooth</string>
+    <string name="bluetooth_not_supported">Bluetooth stöds inte</string>
+    <string name="bluetooth_unsupported_explanation">Denna enhet stöder inte Bluetooth Low Energy (BLE), vilket krävs för LifeLine.\n\nBLE behövs för att bygga mesh och kommunicera utan internet.</string>
+    <string name="checking_bluetooth_status">Kontrollerar Bluetooth‑status…</string>
+    <string name="continue_btn">Fortsätt</string>
+    <string name="initializing_mesh_network">Initierar mesh‑nätverk</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">Ställer in Bluetooth‑mesh…</string>
+    <string name="should_take_seconds">Det tar bara några sekunder</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">Slutför inte inställningen</string>
+    <string name="try_again">Försök igen</string>
+    <string name="type_a_message_placeholder">skriv ett meddelande…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Avbryt</string>
+
+    <string name="bluetooth_recommended">Bluetooth rekommenderas</string>
+    <string name="mesh_service_notification_content">Mesh körs — %1$d peers</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">Språk</string>
+    <string name="about_app_language">Appspråk</string>
+    <string name="about_system_default">Systemstandard</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">och %d till</item>
+        <item quantity="other">och %d till</item>
+    </plurals>
+</resources>

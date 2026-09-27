@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">Ipadala</string>
+
+    <string name="battery_optimization_skip">Laktawan muna</string>
+    <string name="skip">Laktawan</string>
+
+    <string name="notification_messages_from_people">%1$d mensahe mula sa %2$d tao</string>
+    <string name="notification_more_conversations">at %1$d pang usapan</string>
+    <string name="notification_active_peers_title">mga LifeLine na malapit!</string>
+    <string name="notification_active_peers_one">1 tao sa paligid</string>
+    <string name="notification_active_peers_many">%1$d tao sa paligid</string>
+    <string name="notification_new_location_messages">Mga mensahe sa lokasyon</string>
+    <string name="notification_mesh_mention_title_singular">Nabanggit sa Mesh Chat</string>
+    <string name="notification_mesh_mention_title_plural">%1$d banggit sa Mesh Chat</string>
+
+    <string name="pick_image">Pumili ng larawan</string>
+
+    <string name="about_system">system</string>
+    <string name="about_light">light</string>
+    <string name="about_dark">dark</string>
+    <string name="close_plain">Isara</string>
+
+    <string name="cd_location_services">Mga serbisyo sa lokasyon</string>
+    <string name="cd_privacy">Privacy</string>
+    <string name="cd_error">Error</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Larawan</string>
+    <string name="cd_cancel">Kanselahin</string>
+    <string name="cd_record_voice">Mag‑record ng voice note</string>
+
+    <string name="image_unavailable">Hindi available ang larawan</string>
+
+    <string name="open_settings">Buksan ang Settings</string>
+
+    <string name="location_services_required">Kailangang‑kailangan ang Location Services</string>
+    <string name="privacy_first">Privacy muna</string>
+    <string name="location_explanation">HINDI sinusubaybayan ng LifeLine ang iyong lokasyon.\n\nKailangan ang location services para sa Bluetooth scanning.</string>
+    <string name="location_needs_for">Kailangan ng LifeLine ang location services para sa:</string>
+    <string name="location_needs_bullets">• Bluetooth device scanning\n• Pagtuklas ng kalapit na user sa mesh\n• Walang tracking o koleksiyon ng lokasyon</string>
+    <string name="open_location_settings">Buksan ang Location Settings</string>
+    <string name="check_again">Suriin muli</string>
+    <string name="location_services_unavailable">Hindi available ang Location Services</string>
+    <string name="location_unavailable_explanation">Hindi available ang location services sa device na ito. Hindi ito karaniwan dahil standard ito sa Android.\n\nKailangan ito para maayos ang Bluetooth scanning. Kung wala ito, hindi matutuklasan ang mga kalapit na user.</string>
+    <string name="checking_location_services">Sinusuri ang location services…</string>
+    <string name="bluetooth_needs_for">Kailangan ng LifeLine ang Bluetooth para sa:</string>
+    <string name="bluetooth_needs_bullets">• Tuklasin ang mga kalapit na user\n• Gumawa ng mesh na koneksyon\n• Magpadala at tumanggap ng mensahe\n• Gumana kahit walang internet o server</string>
+    <string name="enable_bluetooth">I‑enable ang Bluetooth</string>
+    <string name="bluetooth_not_supported">Hindi suportado ang Bluetooth</string>
+    <string name="bluetooth_unsupported_explanation">Hindi sinusuportahan ng device na ito ang Bluetooth Low Energy (BLE) na kailangan para gumana ang LifeLine.\n\nKailangan ang BLE para bumuo ng mesh at makipag‑ugnayan sa kalapit na device kahit walang internet.</string>
+    <string name="checking_bluetooth_status">Sinusuri ang status ng Bluetooth…</string>
+    <string name="continue_btn">Magpatuloy</string>
+    <string name="initializing_mesh_network">Ine‑initialize ang mesh network</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">Ise‑set up ang Bluetooth mesh…</string>
+    <string name="should_take_seconds">Ilang segundo lang ito</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">Hindi kumpleto ang setup</string>
+    <string name="try_again">Subukang muli</string>
+    <string name="type_a_message_placeholder">magtype ng mensahe…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Kanselahin</string>
+
+    <string name="bluetooth_recommended">Bluetooth Recommended</string>
+    <string name="mesh_service_notification_content">Tumatakbo ang Mesh — %1$d na peer</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">Wika</string>
+    <string name="about_app_language">Wika ng app</string>
+    <string name="about_system_default">Default ng system</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">at %d pa</item>
+        <item quantity="other">at %d pa</item>
+    </plurals>
+</resources>

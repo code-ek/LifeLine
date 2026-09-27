@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">ส่ง</string>
+
+    <string name="battery_optimization_skip">ข้ามตอนนี้</string>
+    <string name="skip">ข้าม</string>
+
+    <string name="notification_messages_from_people">ข้อความ %1$d จาก %2$d คน</string>
+    <string name="notification_more_conversations">และการสนทนาอีก %1$d รายการ</string>
+    <string name="notification_active_peers_title">มีผู้ใช้ใกล้คุณ!</string>
+    <string name="notification_active_peers_one">มี 1 คนใกล้คุณ</string>
+    <string name="notification_active_peers_many">มี %1$d คนใกล้คุณ</string>
+    <string name="notification_new_location_messages">ข้อความตำแหน่งใหม่</string>
+    <string name="notification_mesh_mention_title_singular">ถูกกล่าวถึงในแชทเมช</string>
+    <string name="notification_mesh_mention_title_plural">ถูกกล่าวถึง %1$d ครั้งในแชทเมช</string>
+
+    <string name="pick_image">เลือกภาพ</string>
+
+    <string name="about_system">ระบบ</string>
+    <string name="about_light">สว่าง</string>
+    <string name="about_dark">มืด</string>
+    <string name="close_plain">ปิด</string>
+
+    <string name="cd_location_services">บริการตำแหน่ง</string>
+    <string name="cd_privacy">ความเป็นส่วนตัว</string>
+    <string name="cd_error">ข้อผิดพลาด</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">รูปภาพ</string>
+    <string name="cd_cancel">ยกเลิก</string>
+    <string name="cd_privacy_protected">คุ้มครองความเป็นส่วนตัว</string>
+    <string name="cd_record_voice">บันทึกบันทึกเสียง</string>
+
+    <string name="image_unavailable">ไม่สามารถใช้รูปภาพได้</string>
+
+    <string name="open_settings">เปิดการตั้งค่า</string>
+
+    <string name="location_services_required">ต้องใช้บริการตำแหน่ง</string>
+    <string name="privacy_first">ความเป็นส่วนตัวมาก่อน</string>
+    <string name="location_explanation">LifeLine ไม่ติดตามตำแหน่งของคุณ\n\nต้องใช้บริการตำแหน่งสำหรับการสแกนบลูทูธ</string>
+    <string name="location_needs_for">LifeLine ต้องใช้บริการตำแหน่งสำหรับ:</string>
+    <string name="location_needs_bullets">• สแกนอุปกรณ์บลูทูธ\n• ค้นพบผู้ใช้ใกล้เคียงในเครือข่ายเมช\n• ไม่มีการติดตามหรือเก็บตำแหน่ง</string>
+    <string name="open_location_settings">เปิดการตั้งค่าตำแหน่ง</string>
+    <string name="check_again">ตรวจสอบอีกครั้ง</string>
+    <string name="location_services_unavailable">ไม่สามารถใช้บริการตำแหน่งได้</string>
+    <string name="location_unavailable_explanation">บริการตำแหน่งไม่สามารถใช้ได้ในอุปกรณ์นี้ ซึ่งผิดปกติเนื่องจากโดยทั่วไปแล้วอุปกรณ์ Android จะมีบริการตำแหน่ง\n\nต้องใช้บริการตำแหน่งเพื่อให้การสแกนบลูทูธทำงานได้อย่างถูกต้อง (ข้อกำหนดของ Android) หากไม่มี แอปจะไม่สามารถค้นพบผู้ใช้ใกล้เคียงได้</string>
+    <string name="checking_location_services">กำลังตรวจสอบบริการตำแหน่ง…</string>
+    <string name="bluetooth_needs_for">LifeLine ต้องใช้บลูทูธสำหรับ:</string>
+    <string name="bluetooth_needs_bullets">• ค้นพบผู้ใช้ใกล้เคียง\n• สร้างการเชื่อมต่อเครือข่ายเมช\n• ส่งและรับข้อความ\n• ทำงานโดยไม่ใช้อินเทอร์เน็ตหรือเซิร์ฟเวอร์</string>
+    <string name="enable_bluetooth">เปิดบลูทูธ</string>
+    <string name="bluetooth_not_supported">ไม่รองรับบลูทูธ</string>
+    <string name="bluetooth_unsupported_explanation">อุปกรณ์นี้ไม่รองรับ Bluetooth Low Energy (BLE) ซึ่งจำเป็นสำหรับการทำงานของ LifeLine\n\nต้องใช้ BLE เพื่อสร้างเครือข่ายเมชและสื่อสารกับอุปกรณ์ใกล้เคียงโดยไม่ใช้อินเทอร์เน็ต</string>
+    <string name="checking_bluetooth_status">กำลังตรวจสอบสถานะบลูทูธ…</string>
+    <string name="continue_btn">ดำเนินการต่อ</string>
+    <string name="initializing_mesh_network">กำลังเริ่มต้นเครือข่ายเมช</string>
+    <string name="setting_up_bluetooth">กำลังตั้งค่าเครือข่ายเมช Bluetooth…</string>
+    <string name="should_take_seconds">ควรใช้เวลาเพียงไม่กี่วินาที</string>
+    <string name="setup_not_complete">ตั้งค่าไม่เสร็จสมบูรณ์</string>
+    <string name="try_again">ลองอีกครั้ง</string>
+    <string name="type_a_message_placeholder">พิมพ์ข้อความ…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">ยกเลิก</string>
+
+    <string name="bluetooth_recommended">Bluetooth Recommended</string>
+    <string name="mesh_service_notification_content">Mesh กำลังทำงาน — %1$d เพื่อน</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">ภาษา</string>
+    <string name="about_app_language">ภาษาของแอป</string>
+    <string name="about_system_default">ค่าเริ่มต้นของระบบ</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">และอีก %d</item>
+        <item quantity="other">และอีก %d</item>
+    </plurals>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">Handefa</string>
+
+    <string name="battery_optimization_skip">Hitsambikina ankehitriny</string>
+    <string name="skip">Hitsambikina</string>
+
+    <string name="notification_messages_from_people">%1$d hafatra avy amin\'ny olona %2$d</string>
+    <string name="notification_more_conversations">ary %1$d resaka hafa</string>
+    <string name="notification_active_peers_title">LifeLine akaiky!</string>
+    <string name="notification_active_peers_one">Olona 1 manodidina</string>
+    <string name="notification_active_peers_many">Olona %1$d manodidina</string>
+    <string name="notification_new_location_messages">Hafatra Toerana Vaovao</string>
+    <string name="notification_mesh_mention_title_singular">Voatonona ao amin\'ny Mesh Chat</string>
+    <string name="notification_mesh_mention_title_plural">%1$d fanaovana tsiahy ao amin\'ny Mesh Chat</string>
+
+    <string name="pick_image">Hifidy sary</string>
+
+    <string name="about_system">rafitra</string>
+    <string name="about_light">mazava</string>
+    <string name="about_dark">maizina</string>
+    <string name="close_plain">Hanakatona</string>
+
+    <string name="cd_location_services">Sampan-draharaham-pitoerana</string>
+    <string name="cd_privacy">Fiainana manokana</string>
+    <string name="cd_error">Hadisoana</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Sary</string>
+    <string name="cd_cancel">Hanafoana</string>
+    <string name="cd_privacy_protected">Voaaro ny Fiainana Manokana</string>
+    <string name="cd_record_voice">Handrakitra feo</string>
+
+    <string name="image_unavailable">Tsy misy sary</string>
+
+    <string name="open_settings">Hanokatra fametrahana</string>
+
+    <string name="location_services_required">Ilaina ny Sampan-draharaham-pitoerana</string>
+    <string name="privacy_first">Fiainana Manokana Voalohany</string>
+    <string name="location_explanation">Ny LifeLine dia TSY manaraka ny toerananao.\n\nIlaina ny sampan-draharaham-pitoerana ho an\'ny scan Bluetooth.</string>
+    <string name="location_needs_for">Ny LifeLine dia mila sampan-draharaham-pitoerana ho an\'ny:</string>
+    <string name="location_needs_bullets">• Scan fitaovana Bluetooth\n• Fahitana mpampiasa akaiky amin\'ny tambazotry mesh\n• Tsy misy fanaraha-maso na fanangonana toerana</string>
+    <string name="open_location_settings">Hanokatra Fametrahana Toerana</string>
+    <string name="check_again">Hanamarina Indray</string>
+    <string name="location_services_unavailable">Tsy Misy Sampan-draharaham-pitoerana</string>
+    <string name="location_unavailable_explanation">Tsy misy sampan-draharaham-pitoerana amin\'ity fitaovana ity. Mahagaga izany satria mahazatra amin\'ny fitaovana Android ny sampan-draharaham-pitoerana.\n\nMila sampan-draharaham-pitoerana ny LifeLine mba hiasa tsara ny scan Bluetooth (takiana Android). Raha tsy izany, ny fampiharana dia tsy afaka mahita mpampiasa akaiky.</string>
+    <string name="checking_location_services">Manamarina sampan-draharaham-pitoerana...</string>
+    <string name="bluetooth_needs_for">Mila Bluetooth ny LifeLine mba:</string>
+    <string name="bluetooth_needs_bullets">• Hahita mpampiasa akaiky\n• Hamorona fifandraisana tambazotry mesh\n• Handefa sy handray hafatra\n• Hiasa tsy misy Internet na mpizara</string>
+    <string name="enable_bluetooth">Alefaso ny Bluetooth</string>
+    <string name="bluetooth_not_supported">Tsy Tohanana ny Bluetooth</string>
+    <string name="bluetooth_unsupported_explanation">Ity fitaovana ity dia tsy manohana ny Bluetooth Low Energy (BLE), izay ilaina mba hiasan\'ny LifeLine.\n\nMila BLE ny LifeLine mba hamoronana tambazotry mesh sy hifandray amin\'ny fitaovana akaiky tsy misy Internet.</string>
+    <string name="checking_bluetooth_status">Manamarina ny toe-javatra Bluetooth...</string>
+    <string name="continue_btn">Hanohy</string>
+    <string name="initializing_mesh_network">Manomboka ny tambazotry mesh</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">Mametraka ny tambazotry mesh Bluetooth...</string>
+    <string name="should_take_seconds">Tokony haharitra segaondra vitsivitsy ihany izany</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">Tsy Vita ny Fametrahana</string>
+    <string name="try_again">Andramo Indray</string>
+    <string name="type_a_message_placeholder">soraty hafatra...</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Hanafoana</string>
+
+    <string name="bluetooth_recommended">Bluetooth Recommended</string>
+    <string name="mesh_service_notification_content">Mandeha ny Mesh — %1$d peers</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">Fiteny</string>
+    <string name="about_app_language">Fitenin’ny app</string>
+    <string name="about_system_default">Fitenin’ny rafitra</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">ary %d hafa</item>
+        <item quantity="other">ary %d hafa</item>
+    </plurals>
+</resources>

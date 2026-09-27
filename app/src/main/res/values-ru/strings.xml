@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+    <string name="send_message">Отправить</string>
+
+    <string name="battery_optimization_skip">Пропустить пока</string>
+    <string name="skip">Пропустить</string>
+
+    <string name="notification_messages_from_people">%1$d сообщений от %2$d людей</string>
+    <string name="notification_more_conversations">и ещё %1$d бесед</string>
+    <string name="notification_active_peers_title">LifeLine рядом!</string>
+    <string name="notification_active_peers_one">Рядом 1 человек</string>
+    <string name="notification_active_peers_many">Рядом %1$d человек</string>
+    <string name="notification_new_location_messages">Новые сообщения локаций</string>
+    <string name="notification_mesh_mention_title_singular">Упоминание в Mesh‑чате</string>
+    <string name="notification_mesh_mention_title_plural">%1$d упоминаний в Mesh‑чате</string>
+
+    <string name="pick_image">Выбрать изображение</string>
+
+    <string name="about_system">система</string>
+    <string name="about_light">светлая</string>
+    <string name="about_dark">тёмная</string>
+    <string name="close_plain">Закрыть</string>
+
+    <string name="cd_location_services">Службы локации</string>
+    <string name="cd_privacy">Приватность</string>
+    <string name="cd_error">Ошибка</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Изображение</string>
+    <string name="cd_cancel">Отмена</string>
+    <string name="cd_record_voice">Записать голос</string>
+
+    <string name="image_unavailable">Изображение недоступно</string>
+
+    <string name="open_settings">Открыть настройки</string>
+
+    <string name="location_services_required">Требуются службы локации</string>
+    <string name="privacy_first">Приватность прежде всего</string>
+    <string name="location_explanation">LifeLine НЕ отслеживает вашу геопозицию.\n\nСлужбы локации нужны для сканирования Bluetooth.</string>
+    <string name="location_needs_for">LifeLine нужны службы локации для:</string>
+    <string name="location_needs_bullets">• Сканирования устройств Bluetooth\n• Поиска ближайших пользователей в mesh\n• Без отслеживания и сбора геоданных</string>
+    <string name="open_location_settings">Открыть настройки локации</string>
+    <string name="check_again">Проверить снова</string>
+    <string name="location_services_unavailable">Службы локации недоступны</string>
+    <string name="location_unavailable_explanation">На этом устройстве службы локации недоступны — это необычно.\n\nОни требуются Android для корректной работы сканирования Bluetooth. Иначе невозможно обнаружить ближайших пользователей.</string>
+    <string name="checking_location_services">Проверка служб локации…</string>
+    <string name="bluetooth_needs_for">LifeLine нужен Bluetooth для:</string>
+    <string name="bluetooth_needs_bullets">• Обнаружения ближайших пользователей\n• Создания mesh‑подключений\n• Отправки и получения сообщений\n• Работы без интернета/серверов</string>
+    <string name="enable_bluetooth">Включить Bluetooth</string>
+    <string name="bluetooth_not_supported">Bluetooth не поддерживается</string>
+    <string name="bluetooth_unsupported_explanation">Это устройство не поддерживает Bluetooth Low Energy (BLE), необходимый для работы LifeLine.\n\nBLE нужен для построения mesh и обмена с ближайшими устройствами без интернета.</string>
+    <string name="checking_bluetooth_status">Проверка статуса Bluetooth…</string>
+    <string name="continue_btn">Продолжить</string>
+    <string name="initializing_mesh_network">Инициализация mesh‑сети</string>
+    <string name="dot">.</string>
+    <string name="setting_up_bluetooth">Настройка Bluetooth mesh…</string>
+    <string name="should_take_seconds">Займёт лишь несколько секунд</string>
+    <string name="warning_emoji">⚠️</string>
+    <string name="setup_not_complete">Настройка не завершена</string>
+    <string name="try_again">Повторить</string>
+    <string name="type_a_message_placeholder">введите сообщение…</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Отмена</string>
+
+    <string name="bluetooth_recommended">Рекомендуется Bluetooth</string>
+    <string name="mesh_service_notification_content">Mesh запущен — %1$d пиров</string>
+
+  <string name="verify_title">проверить</string>
+  <string name="verify_my_qr_title">сканируй для проверки</string>
+  <string name="verify_scan_prompt_friend">сканировать чужой QR</string>
+  <string name="verify_remove">удалить проверку</string>
+  <string name="verify_qr_unavailable">QR недоступен</string>
+  <string name="verify_camera_permission">нужен доступ к камере</string>
+  <string name="verify_request_camera">включить камеру</string>
+  <string name="verify_mutual_match_title">Взаимная проверка</string>
+  <string name="verify_mutual_match_body">Вы и %1$s проверили друг друга</string>
+  <string name="verify_mutual_system_message">взаимная проверка с %1$s</string>
+  <string name="verify_success_title">Проверено</string>
+  <string name="verify_success_body">Вы проверили %1$s</string>
+  <string name="verify_success_system_message">проверен %1$s</string>
+    <string name="about_language">Язык</string>
+    <string name="about_app_language">Язык приложения</string>
+    <string name="about_system_default">Системный язык</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">и ещё %d</item>
+        <item quantity="other">и ещё %d</item>
+    </plurals>
+</resources>

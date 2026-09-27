@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">Kirim</string>
+
+    <string name="battery_optimization_skip">Lewati sekarang</string>
+    <string name="skip">Lewati</string>
+
+    <string name="notification_messages_from_people">%1$d pesan dari %2$d orang</string>
+    <string name="notification_more_conversations">dan %1$d percakapan lagi</string>
+    <string name="notification_active_peers_title">LifeLine terdekat!</string>
+    <string name="notification_active_peers_one">1 orang terdekat</string>
+    <string name="notification_active_peers_many">%1$d orang terdekat</string>
+    <string name="notification_new_location_messages">Pesan lokasi baru</string>
+    <string name="notification_mesh_mention_title_singular">Disebut di Mesh Chat</string>
+    <string name="notification_mesh_mention_title_plural">%1$d penyebutan di Mesh Chat</string>
+
+    <string name="pick_image">Pilih gambar</string>
+
+    <string name="about_system">Sistem</string>
+    <string name="about_light">Terang</string>
+    <string name="about_dark">Gelap</string>
+    <string name="close_plain">Tutup</string>
+
+    <string name="cd_location_services">Layanan lokasi</string>
+    <string name="cd_privacy">Privasi</string>
+    <string name="cd_error">Kesalahan</string>
+    <string name="cd_bluetooth">Bluetooth</string>
+    <string name="cd_image">Gambar</string>
+    <string name="cd_cancel">Batal</string>
+    <string name="cd_privacy_protected">Privasi terlindungi</string>
+    <string name="cd_record_voice">Rekam pesan suara</string>
+
+    <string name="image_unavailable">Gambar tidak tersedia</string>
+
+    <string name="open_settings">Buka Pengaturan</string>
+
+    <string name="location_services_required">Layanan lokasi diperlukan</string>
+    <string name="privacy_first">Privasi pertama</string>
+    <string name="location_explanation">LifeLine TIDAK melacak lokasi Anda.\n\nLayanan lokasi diperlukan untuk pemindaian Bluetooth.</string>
+    <string name="location_needs_for">LifeLine memerlukan layanan lokasi untuk:</string>
+    <string name="location_needs_bullets">• Pemindaian perangkat Bluetooth\n• Menemukan pengguna terdekat di jaringan mesh\n• Tidak ada pelacakan atau pengumpulan lokasi</string>
+    <string name="open_location_settings">Buka pengaturan lokasi</string>
+    <string name="check_again">Periksa lagi</string>
+    <string name="location_services_unavailable">Layanan lokasi tidak tersedia</string>
+    <string name="location_unavailable_explanation">Layanan lokasi tidak tersedia di perangkat ini. Ini tidak biasa karena layanan lokasi standar di perangkat Android.\n\nLifeLine memerlukan layanan lokasi agar pemindaian Bluetooth berfungsi dengan benar (persyaratan Android). Tanpanya, aplikasi tidak dapat menemukan pengguna terdekat.</string>
+    <string name="checking_location_services">Memeriksa layanan lokasi …</string>
+    <string name="bluetooth_needs_for">LifeLine memerlukan Bluetooth untuk:</string>
+    <string name="bluetooth_needs_bullets">• Menemukan pengguna terdekat\n• Membuat koneksi jaringan mesh\n• Mengirim dan menerima pesan\n• Berfungsi tanpa Internet atau server</string>
+    <string name="enable_bluetooth">Aktifkan Bluetooth</string>
+    <string name="bluetooth_not_supported">Bluetooth tidak didukung</string>
+    <string name="bluetooth_unsupported_explanation">Perangkat ini tidak mendukung Bluetooth Low Energy (BLE), yang diperlukan agar LifeLine berfungsi.\n\nLifeLine memerlukan BLE untuk membuat jaringan mesh dan berkomunikasi dengan perangkat terdekat tanpa Internet.</string>
+    <string name="checking_bluetooth_status">Memeriksa status Bluetooth …</string>
+    <string name="continue_btn">Lanjut</string>
+    <string name="initializing_mesh_network">Menginisialisasi jaringan mesh</string>
+    <string name="setting_up_bluetooth">Menyiapkan jaringan Bluetooth mesh …</string>
+    <string name="should_take_seconds">Ini seharusnya hanya memakan waktu beberapa detik</string>
+    <string name="setup_not_complete">Penyiapan tidak lengkap</string>
+    <string name="try_again">Coba lagi</string>
+    <string name="type_a_message_placeholder">Ketik pesan …</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">Batal</string>
+
+    <string name="bluetooth_recommended">Bluetooth Recommended</string>
+    <string name="mesh_service_notification_content">Mesh berjalan — %1$d peer</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">Bahasa</string>
+    <string name="about_app_language">Bahasa aplikasi</string>
+    <string name="about_system_default">Default sistem</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">dan %d lagi</item>
+        <item quantity="other">dan %d lagi</item>
+    </plurals>
+</resources>

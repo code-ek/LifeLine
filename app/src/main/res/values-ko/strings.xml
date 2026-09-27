@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LifeLine</string>
+
+    <string name="send_message">보내기</string>
+
+    <string name="battery_optimization_skip">지금 건너뛰기</string>
+    <string name="skip">건너뛰기</string>
+
+    <string name="notification_messages_from_people">%2$d명에게서 %1$d개의 메시지</string>
+    <string name="notification_more_conversations">그리고 %1$d개의 대화 더</string>
+    <string name="notification_active_peers_title">근처 LifeLine!</string>
+    <string name="notification_active_peers_one">근처 1명</string>
+    <string name="notification_active_peers_many">근처 %1$d명</string>
+    <string name="notification_new_location_messages">새 위치 메시지</string>
+    <string name="notification_mesh_mention_title_singular">메쉬 채팅에서 언급됨</string>
+    <string name="notification_mesh_mention_title_plural">메쉬 채팅에서 %1$d회 언급</string>
+
+    <string name="pick_image">이미지 선택</string>
+
+    <string name="about_system">시스템</string>
+    <string name="about_light">라이트</string>
+    <string name="about_dark">다크</string>
+    <string name="close_plain">닫기</string>
+
+    <string name="cd_location_services">위치 서비스</string>
+    <string name="cd_privacy">개인정보</string>
+    <string name="cd_error">오류</string>
+    <string name="cd_bluetooth">블루투스</string>
+    <string name="cd_image">이미지</string>
+    <string name="cd_cancel">취소</string>
+    <string name="cd_privacy_protected">개인정보 보호됨</string>
+    <string name="cd_record_voice">음성 메시지 녹음</string>
+
+    <string name="image_unavailable">이미지를 사용할 수 없음</string>
+
+    <string name="open_settings">설정 열기</string>
+
+    <string name="location_services_required">위치 서비스 필요</string>
+    <string name="privacy_first">개인정보 우선</string>
+    <string name="location_explanation">LifeLine은 사용자의 위치를 추적하지 않습니다.\n\n블루투스 스캔에 위치 서비스가 필요합니다.</string>
+    <string name="location_needs_for">LifeLine은 다음을 위해 위치 서비스가 필요합니다:</string>
+    <string name="location_needs_bullets">• 블루투스 기기 스캔\n• 메쉬 네트워크에서 근처 사용자 발견\n• 추적 또는 위치 수집 없음</string>
+    <string name="open_location_settings">위치 설정 열기</string>
+    <string name="check_again">다시 확인</string>
+    <string name="location_services_unavailable">위치 서비스를 사용할 수 없음</string>
+    <string name="location_unavailable_explanation">이 기기에서는 위치 서비스를 사용할 수 없습니다. Android 기기에서 위치 서비스는 표준이므로 이는 드문 경우입니다.\n\n블루투스 스캔이 제대로 작동하려면 LifeLine에 위치 서비스가 필요합니다(Android 요구 사항). 그렇지 않으면 앱이 주변 사용자를 찾지 못합니다.</string>
+    <string name="checking_location_services">위치 서비스 확인 중 …</string>
+    <string name="bluetooth_needs_for">LifeLine은 다음을 위해 블루투스가 필요합니다:</string>
+    <string name="bluetooth_needs_bullets">• 근처 사용자 찾기\n• 메쉬 네트워크 연결 생성\n• 메시지 보내고 받기\n• 인터넷이나 서버 없이 작동</string>
+    <string name="enable_bluetooth">블루투스 켜기</string>
+    <string name="bluetooth_not_supported">블루투스 미지원</string>
+    <string name="bluetooth_unsupported_explanation">이 기기는 LifeLine이 동작하는 데 필요한 Bluetooth Low Energy (BLE)를 지원하지 않습니다.\n\nLifeLine은 인터넷 없이 근처 장치와 통신하고 메쉬 네트워크를 생성하기 위해 BLE가 필요합니다.</string>
+    <string name="checking_bluetooth_status">블루투스 상태 확인 중 …</string>
+    <string name="continue_btn">계속</string>
+    <string name="initializing_mesh_network">메쉬 네트워크 초기화 중</string>
+    <string name="setting_up_bluetooth">블루투스 메쉬 네트워크 설정 중 …</string>
+    <string name="should_take_seconds">몇 초 정도 소요됩니다</string>
+    <string name="setup_not_complete">설정이 완료되지 않았습니다</string>
+    <string name="try_again">다시 시도</string>
+    <string name="type_a_message_placeholder">메시지 입력 …</string>
+    <string name="version_prefix">v%1$s</string>
+
+    <string name="cancel">취소</string>
+
+    <string name="bluetooth_recommended">블루투스 권장</string>
+    <string name="mesh_service_notification_content">메시 실행 중 — %1$d 피어</string>
+
+  <string name="verify_title">verify</string>
+  <string name="verify_my_qr_title">scan to verify me</string>
+  <string name="verify_scan_prompt_friend">scan someone elses qr</string>
+  <string name="verify_remove">remove verification</string>
+  <string name="verify_qr_unavailable">qr unavailable</string>
+  <string name="verify_camera_permission">camera permission is needed to scan qr codes</string>
+  <string name="verify_request_camera">enable camera</string>
+  <string name="verify_mutual_match_title">Mutual verification</string>
+  <string name="verify_mutual_match_body">You and %1$s verified each other</string>
+  <string name="verify_mutual_system_message">mutual verification with %1$s</string>
+  <string name="verify_success_title">Verified</string>
+  <string name="verify_success_body">You verified %1$s</string>
+  <string name="verify_success_system_message">verified %1$s</string>
+    <string name="about_language">언어</string>
+    <string name="about_app_language">앱 언어</string>
+    <string name="about_system_default">시스템 기본값</string>
+    <plurals name="notification_and_more">
+        <item quantity="one">그리고 %d개 더</item>
+        <item quantity="other">그리고 %d개 더</item>
+    </plurals>
+</resources>
