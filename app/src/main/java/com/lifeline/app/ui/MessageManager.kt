@@ -1,0 +1,380 @@
+package com.lifeline.app.ui
+
+import com.lifeline.app.model.LifeLineMessage
+import com.lifeline.app.model.DeliveryStatus
+import com.lifeline.app.services.ContactDirectory
+import java.util.*
+import java.util.Collections
+
+/**
+ * Handles all message-related operations including deduplication and organization
+ */
+class MessageManager(private val state: ChatState) {
+    
+    // Message deduplication for duplicate deliveries from multiple local transports.
+    private val processedUIMessages = Collections.synchronizedSet(mutableSetOf<String>())
+    private val recentSystemEvents = Collections.synchronizedMap(mutableMapOf<String, Long>())
+    private val SYSTEM_EVENT_DEDUP_TIMEOUT = com.lifeline.app.util.AppConstants.UI.SYSTEM_EVENT_DEDUP_TIMEOUT_MS // 5 seconds
+    
+    // Public Message Management
+    
+    fun addMessage(message: LifeLineMessage) {
+        val currentMessages = state.getMessagesValue().toMutableList()
+        currentMessages.add(message)
+        state.setMessages(currentMessages)
+        // Reflect into process-wide store so snapshot replacements don't drop local outgoing messages
+        try { com.lifeline.app.services.AppStateStore.addPublicMessage(message) } catch (_: Exception) { }
+    }
+
+    // Log a system message into the main chat (visible to user)
+    fun addSystemMessage(text: String) {
+        val sys = LifeLineMessage(
+            sender = "system",
+            content = text,
+            timestamp = Date(),
+            isRelay = false
+        )
+        addMessage(sys)
+    }
+    
+    // Channel Message Management
+    
+    fun addChannelMessage(channel: String, message: LifeLineMessage) {
+        val currentChannelMessages = state.getChannelMessagesValue().toMutableMap()
+        if (!currentChannelMessages.containsKey(channel)) {
+            currentChannelMessages[channel] = mutableListOf()
+        }
+        
+        val channelMessageList = currentChannelMessages[channel]?.toMutableList() ?: mutableListOf()
+        channelMessageList.add(message)
+        currentChannelMessages[channel] = channelMessageList
+        state.setChannelMessages(currentChannelMessages)
+        // Reflect into process-wide store
+        try { com.lifeline.app.services.AppStateStore.addChannelMessage(channel, message) } catch (_: Exception) { }
+        
+        // Update unread count if not currently viewing this channel
+        val viewingClassicChannel = state.getCurrentChannelValue() == channel
+        if (!viewingClassicChannel) {
+            val currentUnread = state.getUnreadChannelMessagesValue().toMutableMap()
+            currentUnread[channel] = (currentUnread[channel] ?: 0) + 1
+            state.setUnreadChannelMessages(currentUnread)
+        }
+    }
+    
+    fun removeChannelMessages(channel: String) {
+        val updatedChannelMessages = state.getChannelMessagesValue().toMutableMap()
+        updatedChannelMessages.remove(channel)
+        state.setChannelMessages(updatedChannelMessages)
+        
+        val updatedUnread = state.getUnreadChannelMessagesValue().toMutableMap()
+        updatedUnread.remove(channel)
+        state.setUnreadChannelMessages(updatedUnread)
+    }
+    
+    fun clearChannelUnreadCount(channel: String) {
+        val currentUnread = state.getUnreadChannelMessagesValue().toMutableMap()
+        currentUnread.remove(channel)
+        state.setUnreadChannelMessages(currentUnread)
+    }
+    
+    // Private Message Management
+
+    fun addPrivateMessage(peerID: String, message: LifeLineMessage) {
+        val conversationID = ContactDirectory.canonicalConversationId(peerID)
+        val accepted = try {
+            com.lifeline.app.services.AppStateStore.addPrivateMessage(
+                conversationID,
+                message
+            )
+        } catch (_: Exception) {
+            false
+        }
+        if (!accepted) return
+        publishAcceptedPrivateMessage(conversationID, message, forceRead = false)
+    }
+
+    /**
+     * Adds a private message only after its database transaction has completed.
+     *
+     * Outgoing sends and non-mesh transports use this path so the local echo is never shown or
+     * transmitted unless it can survive an immediate process death.
+     */
+    suspend fun addPrivateMessageDurably(
+        peerID: String,
+        message: LifeLineMessage,
+        forceRead: Boolean = false
+    ): Boolean {
+        val conversationID = ContactDirectory.canonicalConversationId(peerID)
+        val accepted = try {
+            com.lifeline.app.services.AppStateStore.addPrivateMessageDurably(
+                peerID = conversationID,
+                msg = message,
+                forceRead = forceRead
+            )
+        } catch (_: Exception) {
+            false
+        }
+        if (!accepted) return false
+        publishAcceptedPrivateMessage(conversationID, message, forceRead)
+        return true
+    }
+
+    private fun publishAcceptedPrivateMessage(
+        conversationID: String,
+        message: LifeLineMessage,
+        forceRead: Boolean
+    ) {
+        val currentPrivateChats = state.getPrivateChatsValue().toMutableMap()
+        if (!currentPrivateChats.containsKey(conversationID)) {
+            currentPrivateChats[conversationID] = mutableListOf()
+        }
+        
+        val chatMessages = currentPrivateChats[conversationID]?.toMutableList() ?: mutableListOf()
+        chatMessages.add(message)
+        currentPrivateChats[conversationID] = chatMessages
+        state.setPrivateChats(ContactDirectory.canonicalizePrivateChats(currentPrivateChats))
+        
+        // Mark as unread if not currently viewing this chat
+        val selectedConversationID = state.getSelectedPrivateChatPeerValue()
+            ?.let(ContactDirectory::canonicalConversationId)
+        if (
+            !forceRead &&
+            selectedConversationID != conversationID &&
+            message.sender != state.getNicknameValue()
+        ) {
+            val currentUnread = state.getUnreadPrivateMessagesValue().toMutableSet()
+            currentUnread.add(conversationID)
+            state.setUnreadPrivateMessages(currentUnread)
+        }
+    }
+
+    // Variant that does not mark unread (used when we know the message has been read already)
+    fun addPrivateMessageNoUnread(peerID: String, message: LifeLineMessage) {
+        val conversationID = ContactDirectory.canonicalConversationId(peerID)
+        val accepted = try {
+            com.lifeline.app.services.AppStateStore.addPrivateMessage(
+                peerID = conversationID,
+                msg = message,
+                forceRead = true
+            )
+        } catch (_: Exception) {
+            false
+        }
+        if (!accepted) return
+        publishAcceptedPrivateMessage(conversationID, message, forceRead = true)
+    }
+    
+    fun initializePrivateChat(peerID: String) {
+        val conversationID = ContactDirectory.canonicalConversationId(peerID)
+        if (state.getPrivateChatsValue().containsKey(conversationID)) return
+        
+        val updatedChats = state.getPrivateChatsValue().toMutableMap()
+        updatedChats[conversationID] = emptyList()
+        state.setPrivateChats(updatedChats)
+    }
+    
+    fun clearPrivateUnreadMessages(
+        peerID: String,
+        aliases: Set<String> = emptySet()
+    ) {
+        val conversationID = ContactDirectory.canonicalConversationId(peerID)
+        val updatedUnread = state.getUnreadPrivateMessagesValue().toMutableSet()
+        val normalizedAliases = (aliases + peerID + conversationID)
+            .mapTo(mutableSetOf()) { it.lowercase() }
+        updatedUnread.removeAll { unreadID ->
+            unreadID.lowercase() in normalizedAliases
+        }
+        state.setUnreadPrivateMessages(updatedUnread)
+    }
+    
+    // Message Deduplication
+    
+    /**
+     * Generate a unique key for message deduplication
+     */
+    fun generateMessageKey(message: LifeLineMessage): String {
+        val senderKey = message.senderPeerID ?: message.sender
+        val contentHash = message.content.hashCode()
+        return "$senderKey-${message.timestamp.time}-$contentHash"
+    }
+    
+    /**
+     * Check if a message has already been processed
+     */
+    fun isMessageProcessed(messageKey: String): Boolean {
+        return processedUIMessages.contains(messageKey)
+    }
+    
+    /**
+     * Mark a message as processed
+     */
+    fun markMessageProcessed(messageKey: String) {
+        processedUIMessages.add(messageKey)
+    }
+    
+    /**
+     * Clean up old entries from deduplication caches
+     */
+    fun cleanupDeduplicationCaches() {
+        val now = System.currentTimeMillis()
+        
+        // Clean up processed UI messages (remove entries older than 30 seconds)
+        if (processedUIMessages.size > 1000) {
+            processedUIMessages.clear()
+        }
+        
+        // Clean up recent system events (remove entries older than timeout)
+        recentSystemEvents.entries.removeAll { (_, timestamp) ->
+            (now - timestamp) > SYSTEM_EVENT_DEDUP_TIMEOUT * 2
+        }
+    }
+    
+    // Delivery Status Updates
+    
+    private fun statusPriority(status: DeliveryStatus?): Int = when (status) {
+        null -> 0
+        is DeliveryStatus.Sending -> 1
+        is DeliveryStatus.Sent -> 2
+        is DeliveryStatus.PartiallyDelivered -> 3
+        is DeliveryStatus.Delivered -> 4
+        is DeliveryStatus.Read -> 5
+        is DeliveryStatus.Failed -> 0
+    }
+
+    private fun chooseStatus(old: DeliveryStatus?, new: DeliveryStatus): DeliveryStatus? {
+        // A send failure may replace an in-flight state, but never a confirmed delivery/read.
+        return when {
+            new is DeliveryStatus.Failed &&
+                old !is DeliveryStatus.Delivered &&
+                old !is DeliveryStatus.Read -> new
+            old is DeliveryStatus.Failed -> new
+            statusPriority(new) >= statusPriority(old) -> new
+            else -> old
+        }
+    }
+
+    fun updateMessageDeliveryStatus(messageID: String, status: DeliveryStatus) {
+        // Update in private chats
+        val updatedPrivateChats = state.getPrivateChatsValue().toMutableMap()
+        var updated = false
+        
+        updatedPrivateChats.forEach { (peerID, messages) ->
+            val updatedMessages = messages.toMutableList()
+            val messageIndex = updatedMessages.indexOfFirst { it.id == messageID }
+            if (messageIndex >= 0) {
+                val current = updatedMessages[messageIndex].deliveryStatus
+                val finalStatus = chooseStatus(current, status)
+                if (finalStatus !== current) {
+                    updatedMessages[messageIndex] = updatedMessages[messageIndex].copy(deliveryStatus = finalStatus)
+                    updatedPrivateChats[peerID] = updatedMessages
+                    updated = true
+                }
+            }
+        }
+        
+        if (updated) {
+            state.setPrivateChats(updatedPrivateChats)
+            // Keep process-wide store in sync to prevent snapshot overwrites resetting status
+            try { com.lifeline.app.services.AppStateStore.updatePrivateMessageStatus(messageID, status) } catch (_: Exception) { }
+        }
+        
+        // Update in main messages
+        val updatedMessages = state.getMessagesValue().toMutableList()
+        val messageIndex = updatedMessages.indexOfFirst { it.id == messageID }
+        if (messageIndex >= 0) {
+            val current = updatedMessages[messageIndex].deliveryStatus
+            val finalStatus = chooseStatus(current, status)
+            if (finalStatus !== current) {
+                updatedMessages[messageIndex] = updatedMessages[messageIndex].copy(deliveryStatus = finalStatus)
+                state.setMessages(updatedMessages)
+            }
+        }
+        
+        // Update in channel messages
+        val updatedChannelMessages = state.getChannelMessagesValue().toMutableMap()
+        updatedChannelMessages.forEach { (channel, messages) ->
+            val channelMessagesList = messages.toMutableList()
+            val channelMessageIndex = channelMessagesList.indexOfFirst { it.id == messageID }
+            if (channelMessageIndex >= 0) {
+                val current = channelMessagesList[channelMessageIndex].deliveryStatus
+                val finalStatus = chooseStatus(current, status)
+                if (finalStatus !== current) {
+                    channelMessagesList[channelMessageIndex] = channelMessagesList[channelMessageIndex].copy(deliveryStatus = finalStatus)
+                    updatedChannelMessages[channel] = channelMessagesList
+                }
+            }
+        }
+        state.setChannelMessages(updatedChannelMessages)
+    }
+
+    // Remove a message from all locations (main timeline, private chats, channels)
+    fun removeMessageById(messageID: String) {
+        // Main timeline
+        run {
+            val list = state.getMessagesValue().toMutableList()
+            val idx = list.indexOfFirst { it.id == messageID }
+            if (idx >= 0) {
+                list.removeAt(idx)
+                state.setMessages(list)
+            }
+        }
+        // Private chats
+        run {
+            val chats = state.getPrivateChatsValue().toMutableMap()
+            var changed = false
+            chats.keys.toList().forEach { key ->
+                val msgs = chats[key]?.toMutableList() ?: mutableListOf()
+                val idx = msgs.indexOfFirst { it.id == messageID }
+                if (idx >= 0) {
+                    msgs.removeAt(idx)
+                    chats[key] = msgs
+                    changed = true
+                }
+            }
+            if (changed) {
+                state.setPrivateChats(chats.filterValues { it.isNotEmpty() })
+                com.lifeline.app.services.AppStateStore.removePrivateMessage(messageID)
+            }
+        }
+        // Channels
+        run {
+            val chans = state.getChannelMessagesValue().toMutableMap()
+            var changed = false
+            chans.keys.toList().forEach { ch ->
+                val msgs = chans[ch]?.toMutableList() ?: mutableListOf()
+                val idx = msgs.indexOfFirst { it.id == messageID }
+                if (idx >= 0) {
+                    msgs.removeAt(idx)
+                    chans[ch] = msgs
+                    changed = true
+                }
+            }
+            if (changed) state.setChannelMessages(chans)
+        }
+    }
+    
+    // Utility Functions
+    
+    fun parseMentions(content: String, peerNicknames: Set<String>, currentNickname: String?): List<String> {
+        val mentionRegex = "@([a-zA-Z0-9_]+)".toRegex()
+        val allNicknames = peerNicknames + (currentNickname ?: "")
+        
+        return mentionRegex.findAll(content)
+            .map { it.groupValues[1] }
+            .filter { allNicknames.contains(it) }
+            .distinct()
+            .toList()
+    }
+    
+    // Emergency Clear
+    
+    fun clearAllMessages() {
+        state.setMessages(emptyList())
+        state.setPrivateChats(emptyMap())
+        state.setChannelMessages(emptyMap())
+        state.setUnreadPrivateMessages(emptySet())
+        state.setUnreadChannelMessages(emptyMap())
+        processedUIMessages.clear()
+        recentSystemEvents.clear()
+    }
+}
