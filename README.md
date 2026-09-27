@@ -14,9 +14,9 @@
 
 ### Watch the Trailer
 
-https://github.com/code-ek/LifeLine/releases/download/v1.0.0/LifeLine-Trailer-small.mp4
+https://github.com/code-ek/LifeLine/raw/main/assets/trailer.mp4
 
-**[Watch in HD on YouTube](https://youtu.be/X5PIhO-vDT0)**
+**[Watch in full HD on YouTube](https://youtu.be/X5PIhO-vDT0)**
 
 ---
 
