@@ -276,7 +276,7 @@ class ChatUIUtilsTest {
 
     @Test
     fun `material owns standard text while LifeLine palette owns peer chroma`() {
-        assertEquals(Color(0xFFF1F5F1), DarkLifeLineColorScheme.onSurface)
+        assertEquals(Color(0xFFE8F0E8), DarkLifeLineColorScheme.onSurface)
         assertTrue(LightLifeLineColorScheme.onSurface != DarkLifeLineColorScheme.onSurface)
         assertTrue(
             LightLifeLinePalette.peerColors != DarkLifeLinePalette.peerColors

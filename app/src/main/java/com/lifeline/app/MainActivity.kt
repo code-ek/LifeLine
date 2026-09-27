@@ -700,8 +700,11 @@ class MainActivity : OrientationAwareActivity() {
                     return@launch
                 }
 
-                // Set up unified mesh delegate and start enabled transports
+                // Set up unified mesh delegate and start enabled transports.
+                // Force a stop first to clear any stale state from a prior failed async start.
                 unifiedMeshService.delegate = chatViewModel
+                unifiedMeshService.stopServices()
+                delay(200)
                 unifiedMeshService.startServices()
                 startMeshForegroundServiceBestEffort()
 

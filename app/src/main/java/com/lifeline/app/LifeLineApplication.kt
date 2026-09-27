@@ -39,7 +39,13 @@ class LifeLineApplication : Application() {
         // Listen for SOS alerts before the mesh starts, so alerts surface even with the UI closed
         try { com.lifeline.app.emergency.EmergencyRuntime.initialize(this) } catch (_: Exception) { }
 
-        // Proactively start the foreground service to keep mesh alive
-        try { com.lifeline.app.service.MeshForegroundService.start(this) } catch (_: Exception) { }
+        // Start the foreground service only if onboarding was already completed in a prior launch.
+        // On fresh install, initializeApp() in MainActivity starts it after permissions are granted.
+        try {
+            val prefs = getSharedPreferences("lifeline_permissions", MODE_PRIVATE)
+            if (prefs.getBoolean("first_time_onboarding_complete", false)) {
+                com.lifeline.app.service.MeshForegroundService.start(this)
+            }
+        } catch (_: Exception) { }
     }
 }

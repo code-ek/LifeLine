@@ -94,6 +94,9 @@ class BluetoothConnectionManager(
     
     // Service state
     private var isActive = false
+
+    /** True when the BLE GATT server/client started successfully and hasn't been stopped. */
+    val isRunning: Boolean get() = isActive
     
     // Delegate for callbacks
     var delegate: BluetoothConnectionManagerDelegate? = null

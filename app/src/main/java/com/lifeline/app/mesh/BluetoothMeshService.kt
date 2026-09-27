@@ -751,10 +751,14 @@ class BluetoothMeshService(private val context: Context) : TransportBridgeServic
      * Start the mesh service
      */
     fun startServices() {
-        // Prevent double starts (defensive programming)
+        // Prevent double starts — but self-heal if a prior async BLE start failed silently
         if (isActive) {
-            Log.w(TAG, "Mesh service already active, ignoring duplicate start request")
-            return
+            if (connectionManager.isRunning) {
+                Log.w(TAG, "Mesh service already active, ignoring duplicate start request")
+                return
+            }
+            Log.w(TAG, "Mesh service marked active but BLE not running; restarting")
+            isActive = false
         }
         if (!isBleTransportEnabled()) {
             Log.i(TAG, "BLE transport disabled by debug settings; not starting mesh service")
