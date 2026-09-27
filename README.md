@@ -22,33 +22,6 @@ https://github.com/code-ek/LifeLine/raw/main/assets/trailer.mp4
 
 </div>
 
-## Screenshots
-
-<div align="center">
-<table>
-<tr>
-<td align="center"><b>Mesh Chat</b></td>
-<td align="center"><b>Emergency SOS</b></td>
-<td align="center"><b>Offline Map</b></td>
-</tr>
-<tr>
-<td><img src="assets/screenshots/chat.png" width="250"/></td>
-<td><img src="assets/screenshots/sos.png" width="250"/></td>
-<td><img src="assets/screenshots/map.png" width="250"/></td>
-</tr>
-<tr>
-<td align="center"><b>Live Translation</b></td>
-<td align="center"><b>AI Assistant</b></td>
-<td></td>
-</tr>
-<tr>
-<td><img src="assets/screenshots/translate.png" width="250"/></td>
-<td><img src="assets/screenshots/helper.png" width="250"/></td>
-<td></td>
-</tr>
-</table>
-</div>
-
 ## The Problem
 
 When disaster strikes — an earthquake, a hurricane, a conflict, an infrastructure collapse — conventional communication is often the first thing to fail. Cell towers go down. Internet disappears. Power grids fail.
@@ -200,6 +173,5 @@ Contributions are welcome. Whether it's bug fixes, new features, translations, o
 
 **If LifeLine ever helps even one person get the help they need, then building it was worth it.**
 
-*Built at [Hack Atlantic 2026](https://hack-atlantic.devpost.com/)*
 
 </div>
