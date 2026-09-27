@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
@@ -47,6 +49,7 @@ object Speaker {
  */
 class Listener(private val context: Context) {
     private var recognizer: SpeechRecognizer? = null
+    private var triedOnDevice = false
 
     val isAvailable: Boolean
         get() = onDeviceAvailable() || SpeechRecognizer.isRecognitionAvailable(context)
@@ -61,19 +64,27 @@ class Listener(private val context: Context) {
         onError: (String) -> Unit
     ) {
         cancel()
-        val created = try {
-            when {
-                onDeviceAvailable() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
-                    SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
-                SpeechRecognizer.isRecognitionAvailable(context) -> SpeechRecognizer.createSpeechRecognizer(context)
-                else -> {
-                    onError("Speech input isn't available on this phone. Type instead.")
-                    return
-                }
+        triedOnDevice = false
+        startWith(language, preferOnDevice = true, onPartial, onResult, onError)
+    }
+
+    private fun startWith(
+        language: Language,
+        preferOnDevice: Boolean,
+        onPartial: (String) -> Unit,
+        onResult: (String) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        val created = when {
+            preferOnDevice && onDeviceAvailable() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+                triedOnDevice = true
+                SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
             }
-        } catch (e: Exception) {
-            onError("Speech recognition isn't available on this phone. Type instead.")
-            return
+            SpeechRecognizer.isRecognitionAvailable(context) -> SpeechRecognizer.createSpeechRecognizer(context)
+            else -> {
+                onError("Speech input isn't available on this phone. Type instead.")
+                return
+            }
         }
         recognizer = created
         created.setRecognitionListener(object : RecognitionListener {
@@ -88,6 +99,18 @@ class Listener(private val context: Context) {
             }
 
             override fun onError(error: Int) {
+                val canRetry = error == SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED ||
+                    error == SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE ||
+                    error == SpeechRecognizer.ERROR_NETWORK ||
+                    error == SpeechRecognizer.ERROR_SERVER ||
+                    error == SpeechRecognizer.ERROR_TOO_MANY_REQUESTS
+                if (triedOnDevice && canRetry && SpeechRecognizer.isRecognitionAvailable(context)) {
+                    cancel()
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        startWith(language, preferOnDevice = false, onPartial, onResult, onError)
+                    }, 300)
+                    return
+                }
                 onError(describe(error, language))
                 cancel()
             }
@@ -103,13 +126,10 @@ class Listener(private val context: Context) {
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE, language.tag)
             .putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
-            .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
-        try {
-            created.startListening(intent)
-        } catch (e: Exception) {
-            onError("Couldn't start speech recognition. Type instead.")
-            cancel()
+        if (preferOnDevice && triedOnDevice) {
+            intent.putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
         }
+        created.startListening(intent)
     }
 
     /** Stops listening and delivers what was heard so far. */
@@ -127,10 +147,10 @@ class Listener(private val context: Context) {
     private fun describe(error: Int, language: Language): String = when (error) {
         SpeechRecognizer.ERROR_NO_MATCH, SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "Didn't catch that. Try again."
         SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Microphone permission is needed to listen."
-        SpeechRecognizer.ERROR_NETWORK, SpeechRecognizer.ERROR_NETWORK_TIMEOUT, SpeechRecognizer.ERROR_SERVER,
+        SpeechRecognizer.ERROR_NETWORK, SpeechRecognizer.ERROR_NETWORK_TIMEOUT, SpeechRecognizer.ERROR_SERVER ->
+            "No internet for speech. Type instead or download ${language.name} offline speech in phone Settings."
         SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED, SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE ->
-            "Offline speech for ${language.name} isn't installed on this phone. Type instead, or add it in " +
-                "Settings › Speech recognition while online."
+            "${language.name} speech not available. Type instead."
         else -> "Couldn't listen (error $error). Type instead."
     }
 }
